@@ -1,0 +1,16 @@
+#site-container{
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-areas: 'side-nav main';
+  
+  app-side-nav{
+    grid-area: side-nav;
+  }
+
+  main {
+    grid-area: main;
+    padding: 20px 30px;
+  }
+}
+
+

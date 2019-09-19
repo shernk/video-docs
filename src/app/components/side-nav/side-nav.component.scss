@@ -1,0 +1,134 @@
+@import "src/styles/variables";
+
+nav {
+  display: grid;
+  height: 100vh;
+  width: 300px;
+  // max-width: 300px;
+  align-content: baseline;
+  transition: all 0.3s;
+  background-color: $secondary-background;
+  position: fixed;
+  z-index: 2;
+
+  &.is-closed {
+    width: 55px;
+  }
+
+  ul {
+    display: grid;
+    grid-gap: 10px;
+
+    li {
+      display: grid;
+      grid-template-columns: 30px 1fr;
+      padding-left: 12px;
+      align-items: center;
+      padding-bottom: 5px;
+      padding-top: 5px;
+
+      &:not(#logo, #search) {
+        &:hover {
+          background-color: $blue;
+          transition: background-color 0.3s;
+        }
+      }
+
+      &.active-route {
+        background-color: $blue;
+      }
+
+      &#logo {
+        display: grid;
+        grid-gap: 5px;
+        grid-template-columns: auto auto;
+        align-content: center;
+
+        i {
+          display: block;
+          padding-right: 12px;
+          color: $color;
+          justify-self: end;
+        }
+
+        img {
+          display: block;
+          width: 25px;
+          cursor: pointer;
+        }
+      }
+
+      i {
+        font-size: 30px;
+
+        &.fa-html5,
+        &.fa-css3-alt,
+        &.fa-js {
+          &:hover {
+            color: white;
+            transition: color 0.3s;
+          }
+        }
+
+        &.fa-html5 {
+          color: $html;
+          padding-left: 2.5px;
+
+          &.active-route {
+            color: white;
+          }
+        }
+
+        &.fa-css3-alt {
+          color: $css;
+          padding-left: 2.5px;
+
+          &.active-route {
+            color: white;
+          }
+        }
+
+        &.fa-js {
+          color: $javascript;
+
+          &.active-route {
+            color: white;
+          }
+        }
+
+        &.fa-chevron-left {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $tablet) {
+  nav {
+    background-color: transparent;
+
+    i.fas.fa-bars {
+      font-size: 20px;
+    }
+
+    &:not(.is-open) {
+      ul {
+        margin-top: 0;
+
+        li {
+          display: none;
+
+          #logo-img {
+            display: none;
+          }
+        }
+      }
+    }
+
+    &.is-open {
+      background-color: $secondary-background;
+      height: -webkit-fill-available;
+    }
+  }
+}

@@ -1,0 +1,21 @@
+<div id="video-playlist">
+  <header>
+    <h3><i class="fab fa-js"></i>JavaScript</h3>
+    <small>4 / {{ playlist.items.length }}</small>
+  </header>
+
+  <ul>
+    <li
+      *ngFor="let item of playlist.items"
+      [class.active]="item === selectedVideo"
+      (click)="selectVideo(item.videoId)"
+    >
+      <img [src]="item.thumnailUrl" [alt]="item.title" />
+
+      <div id="details" [class.active]="item === selectVideo(item.videoId)">
+        <h4 [class.active]="item === selectVideo(item.videoId)">{{ item.title }}</h4>
+        <p><i class="far fa-clock"></i> 4m 30s</p>
+      </div>
+    </li>
+  </ul>
+</div>

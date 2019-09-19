@@ -1,0 +1,66 @@
+@import "../../../../../styles/variables.scss";
+
+article {
+  #book-content {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    background-color: $tertiary-background;
+    grid-gap: 20px;
+    padding: 15px;
+
+    img {
+      background-color: $black;
+      padding: 15px 20px;
+      display: block;
+    }
+
+    #information {
+      display: grid;
+
+      h3 {
+        color: $orange;
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+
+      p {
+        color: white;
+        margin-bottom: 0;
+        align-self: center;
+      }
+    }
+  }
+
+  #book-details {
+    background-color: $tertiary-background;
+    margin-bottom: 15px;
+
+
+    hr {
+      margin: 0;
+    }
+
+    #rating {
+      display: grid;
+      font-size: 25px;
+      padding: 15px;
+      grid-template-columns: auto auto;
+
+      #buy
+      {
+        color: $orange;
+      }
+
+      #stars {
+        justify-self: end;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  article {
+      grid-template-columns: 1fr;
+  }
+}
+

@@ -1,0 +1,18 @@
+@import "src/styles/variables";
+
+article {
+  section {
+    display: grid;
+    background-color: $background-color;
+
+    header {
+      background-color: $green;
+
+      h3 {
+        text-align: center;
+        color: white;
+        min-width: 250px;
+      }
+    }
+  }
+}

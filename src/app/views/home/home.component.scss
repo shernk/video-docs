@@ -1,0 +1,38 @@
+#home-container {
+  display: grid;
+  justify-items: center;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+
+  h1 {
+    align-self: end;
+    margin-bottom: 0;
+  }
+
+  #main-categories {
+    ul {
+      display: grid;
+      grid-template-columns: auto /* auto auto */;
+      grid-gap: 30px;
+    }
+    li {
+      display: inline-block;
+      font-size: 100px;
+
+      i {
+        &.fa-html5 {
+          color: #ff0707;
+        }
+
+        &.fa-css3-alt {
+          color: #0004ffea;
+        }
+
+        &.fa-js {
+          color: #fffb07;
+        }
+      }
+    }
+  }
+}

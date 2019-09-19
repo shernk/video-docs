@@ -1,0 +1,30 @@
+@import "../../../../../styles/variables.scss";
+
+nav {
+  display: grid;
+  grid-template-columns: 1fr;
+
+  h3 {
+    display: grid;
+    background-color: $background-color-nav;
+    color: white;
+    height: 75px;
+    justify-items: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  ul {
+    margin-top: -18px;
+    background-color: $secondary-background;
+    border-top: solid 1px $color-li;
+
+    li {
+      cursor: pointer;
+      padding: 15px 0;
+      text-align: center;
+      color: $color-li;
+      text-transform: capitalize;
+    }
+  }
+}

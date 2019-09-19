@@ -1,0 +1,17 @@
+<nav [class.is-closed]="isClosed" [class.is-open]="!isClosed">
+  <ul>
+    <li id="logo">
+      <i *ngIf="isClosed" (click)="openMenu()" [class.is-open]="!isClosed" class="fas fa-bars"></i>
+      <img id="logo-img" src="../../../assets/image/filmhunterlogo.png" alt="Error" *ngIf="!isClosed" (click)="closeMenu()"/>
+      <i class="fas fa-chevron-left" *ngIf="!isClosed" (click)="closeMenu()"></i>
+    </li>
+
+    <!-- <li id="search" *ngIf="!isClosed" (click)="closeMenu()"><i class="fas fa-search"></i></li>
+
+    <li (click)="openMenu()" [routerLink]="['category/html']" [routerLinkActive]="'active-route'"><i class="fab fa-html5" [routerLinkActive]="'active-route'"></i></li>
+
+    <li (click)="openMenu()" [routerLink]="['category/css']" [routerLinkActive]="'active-route'" ><i class="fab fa-css3-alt" [routerLinkActive]="'active-route'"></i></li> -->
+
+    <li (click)="openMenu()" [routerLink]="['category/javascript']" [routerLinkActive]="'active-route'"><i class="fab fa-js"></i></li>
+  </ul>
+</nav>

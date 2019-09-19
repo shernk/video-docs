@@ -1,0 +1,38 @@
+<div id="category-container">
+  <app-bread-crumbs></app-bread-crumbs>
+
+  <!-- <app-header [category]="category"></app-header> -->
+
+  <app-side-bar> </app-side-bar>
+
+  <div id="topics">
+    <app-resources [title]="'Resource'" [list]="resourceList"></app-resources>
+  </div>
+
+  <div id="video">
+    <app-card [iconClasses]="'fas fa-play'" [title]="'Video Doc'">
+      <div id="video-container">
+        <app-video></app-video>
+        <app-video-playlist></app-video-playlist>
+      </div>
+    </app-card>
+  </div>
+
+  <!-- <app-vertical-tabs
+    [tabContainers]="category.tabContainers"
+  ></app-vertical-tabs> -->
+
+  <app-card [iconClasses]="'fas fa-book'" [title]="'Recommended Books'">
+    <div id="books">
+      <app-book *ngFor="let book of category.books" [book]="book"></app-book>
+    </div>
+  </app-card>
+
+  <app-card
+    id="courses"
+    [iconClasses]="'fas fa-play'"
+    [title]="'Recommended Courses'"
+  >
+    <app-courses [courses]="category.courses"></app-courses>
+  </app-card>
+</div>

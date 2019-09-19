@@ -1,0 +1,22 @@
+<div>
+  <ul>
+    <li
+      *ngFor="let tabItem of tabItems"
+      (click)="selectTabItem(tabItem)"
+      [class.is-active]="tabItem === selectedTabItem"
+    >
+      <i
+        [ngClass]="[
+          tabItem.iconClasses,
+          tabItem === selectedTabItem ? 'is-active' : ''
+        ]"
+      ></i>
+
+      {{ tabItem.label }}
+    </li>
+  </ul>
+
+  <div>
+    <app-dynamic-content [context]=""></app-dynamic-content>
+  </div>
+</div>

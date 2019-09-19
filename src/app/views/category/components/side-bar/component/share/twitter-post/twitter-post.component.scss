@@ -1,0 +1,9 @@
+@import '../../../../../../../../styles/variables.scss';
+
+i {
+  font-size: 45px;
+
+  &.fa-twitter-square {
+    color: $twitter-blue;
+  }
+}

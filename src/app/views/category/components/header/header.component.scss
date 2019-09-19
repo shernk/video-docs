@@ -1,0 +1,30 @@
+@import "src/styles/variables";
+
+header {
+  display: grid;
+  grid-template-areas: "icon title" "description description";
+  grid-template-columns: auto auto;
+  grid-column-gap: 20px;
+  align-items: center;
+
+  i {
+    grid-area: icon;
+    font-size: 100px;
+    justify-self: end;
+
+    &.javascript {
+      color: $javascript;
+    }
+  }
+
+  h1 {
+    grid-area: title;
+  }
+
+  p {
+    grid-area: description;
+    text-align: center;
+    color: white;
+    padding: 0 20px 0 20px;
+  }
+}

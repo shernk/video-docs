@@ -1,0 +1,62 @@
+@import "../../../../../styles/variables.scss";
+
+#team-container {
+  height: 500px;
+  width: 900px;
+  background-image: url("https://via.placeholder.com/900x500");
+
+  #team-members {
+    display: grid;
+    max-width: 250px;
+    background-color: rgba(37, 37, 37, 0.9);
+    margin: 0 5%; /* margin-left: 5%; */
+    padding: 15px;
+    height: 100%;
+    align-items: center;
+
+    hr {
+      margin: 0 0;
+    }
+
+    #team {
+      display: grid;
+      grid-gap: 5px;
+      grid-template-columns: auto auto auto 1fr;
+
+      img {
+        display: block;
+        width: 50px;
+        cursor: pointer;
+      }
+
+      #member{
+        margin-top: 0;
+      }
+    }
+
+    h3, h4{
+      margin: 0;
+    }
+
+    h3{
+      color: $orange;
+    }
+    h4{
+      color: $black;
+    }
+    p{
+      color: $green;
+      margin-bottom: 0;
+      margin-top: 0;
+    }
+
+    #social-media{
+      display: grid;
+      grid-template-columns: auto auto auto auto;
+      justify-items: center;
+      font-size: 35px;
+      width: 100%;
+    }
+
+  }
+}

@@ -1,0 +1,42 @@
+@import "../../../../../styles/variables.scss";
+
+blockquote {
+  display: grid;
+  grid-gap: 15px;
+  grid-template-columns: auto 1fr;
+  padding: 20px;
+  color: white;
+  background-color: $blue;
+  border-left: 10px solid yellow;
+
+  i,
+  p {
+    color: white;
+  }
+
+  i {
+    font-size: 30px;
+  }
+
+  #quote {
+    margin-right: 25%;
+  }
+
+  footer {
+    grid-column: 1/3;
+    justify-self: end;
+    text-align: right;
+
+    #author {
+      font-weight: bold;
+      text-transform: uppercase;
+      margin: 0;
+      margin-bottom: 5px;
+    }
+
+    #occupation {
+      font-style: italic;
+      margin: 0;
+    }
+  }
+}

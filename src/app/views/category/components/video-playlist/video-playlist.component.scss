@@ -1,0 +1,95 @@
+@import "src/styles/variables";
+
+#video-playlist {
+  display: grid;
+  max-width: 325px;
+  margin-bottom: 15px;
+  border: 1px solid $green;
+
+  header {
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    background-color: $green;
+
+    h3 {
+      display: grid;
+      grid-template-columns: auto auto;
+      margin: 0;
+      padding: 20px;
+      color: white;
+
+      i {
+        text-align: center;
+        align-self: center;
+
+        &.fab.fa-js {
+          color: $javascript;
+        }
+      }
+    }
+
+    small {
+      text-align: center;
+      color: $light-grey;
+    }
+  }
+
+  ul {
+    // border: 1px solid $black;
+    // border-style: dashed;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin: 0;
+    padding-top: 10px;
+    max-height: 500px;
+    overflow: scroll;
+    overflow-x: hidden;
+
+    li {
+      display: grid;
+      grid-template-columns: 100px 1fr;
+      margin-bottom: 10px; // inherit; // grid-template-rows: 110px;
+      grid-column-gap: 10px;
+      cursor: pointer;
+
+      &.active {
+        color: white;
+        background-color: $green;
+      }
+
+      img {
+        display: block;
+        max-width: 100px;
+      }
+
+      #details {
+        display: grid;
+
+        h4,
+        p {
+          margin: 0;
+        }
+
+        h4 {
+          color: $green;
+
+          &.active {
+            color: white;
+            background-color: $green;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $tablet) {
+  #video-playlist {
+    max-width: 100%;
+
+    ul {
+      max-height: 350px;
+    }
+  }
+}

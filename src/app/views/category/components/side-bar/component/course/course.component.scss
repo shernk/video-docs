@@ -1,0 +1,36 @@
+@import "src/styles/variables";
+
+section {
+  display: grid;
+  grid-row-gap: 10px;
+
+  img {
+    width: 100%;
+  }
+
+  #content {
+    background-color: $quaternary-background;
+    padding: 10px;
+
+    h4 {
+      color: $orange;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    button {
+      width: 100%;
+      background-color: $green;
+      border: none;
+      color: white;
+      padding: 10px;
+    }
+  }
+}
+
+@media screen and (max-width: $tablet){
+  section{
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+  }
+}

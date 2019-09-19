@@ -1,0 +1,14 @@
+<div id="alert" [class]="alert.type" [class.is-Shown]="isShown && isNeeded" [class.is-Close]="!isShown">
+  <div id="icon-type" [ngSwitch]="alert.type">
+    <i class="fas fa-info-circle" *ngSwitchCase="alertTypes.Info"></i>
+  </div>
+
+  <div id="body">
+    <h3>{{ alert.title }}</h3>
+    <p>{{ alert.content }}</p>
+  </div>
+
+  <button id="close" (click)="close()">
+    <i class="fas fa-times"></i>
+  </button>
+</div>

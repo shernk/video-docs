@@ -1,0 +1,58 @@
+@import "src/styles/variables";
+
+div {
+  background-color: $background-color;
+  margin-bottom: 10px;
+
+  ul {
+    margin: 0;
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: left;
+    align-content: center;
+
+    li {
+      display: grid;
+      grid-gap: 5px;
+      grid-template-columns: auto auto auto;
+      align-items: center;
+      padding: 5px 5px 5px 10px;
+      text-transform: capitalize;
+      background-color: $secondary-background;
+      border-right: 1px solid $black;
+      cursor: pointer;
+
+      p {
+        margin: 0;
+      }
+
+      &:first-of-type {
+        i {
+          padding-right: 5px;
+
+          &.fa-js {
+            color: $javascript;
+          }
+        }
+      }
+
+      &:last-of-type {
+        background-color: $black;
+
+        p {
+          color: white;
+        }
+        i {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $tablet) {
+  div {
+    margin-left: 20px;
+    margin-top: 3px;
+  }
+}

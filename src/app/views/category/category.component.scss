@@ -1,0 +1,85 @@
+@import "src/styles/variables";
+
+#category-container,
+#topic-container {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: 1fr 300px;
+  margin-left: 50px;
+  grid-template-areas:
+    "breadCrumbs breadCrumbs"
+    "header header"
+    "topics topics"
+    "video side-bar"
+    "examples side-bar"
+    // "books side-bar"
+    // "courses side-bar";
+    "app-card side-bar";
+}
+
+app-bread-crumbs {
+  grid-area: breadCrumbs;
+}
+
+app-header {
+  grid-area: header;
+}
+
+app-side-bar {
+  grid-area: side-bar;
+}
+
+#video {
+  grid-area: video;
+
+  #video-container {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr auto;
+  }
+}
+
+app-vertical-tabs {
+  grid-area: examples;
+}
+
+#topics {
+  display: grid;
+  grid-gap: 10px;
+  grid-area: topics;
+  grid-template-columns: 250px auto 300px;
+  margin-top: 20px;
+
+  #options {
+    display: grid;
+    // justify-items: center;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+app-card {
+  #books {
+    grid-area: books;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  #courses {
+    grid-area: courses;
+  }
+}
+
+@media screen and (max-width: $tablet) {
+  #category-container,
+  #topic-container {
+
+
+    #video {
+      #video-container {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+}

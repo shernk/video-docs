@@ -1,0 +1,31 @@
+<div id="team-container">
+  <div id="team-members">
+    <div id="team">
+      <img
+      *ngFor="let member of teamMembers"
+      (click)="selectTeamMember(member)"
+        [src]="member.photo"
+        [alt]="member.fullName"
+      />
+    </div>
+
+    <!-- <hr /> -->
+    <div id="member">
+      <h3>{{ currentTeamMember.fullName }}</h3>
+      <h4>{{ currentTeamMember.occupation }}</h4>
+    </div>
+    <p>{{ currentTeamMember.description1 }}</p>
+    <p>{{ currentTeamMember.description2 }}</p>
+
+    <hr />
+    <div id="social-media">
+      <a
+        [href]="media.url"
+        target="blank"
+        *ngFor="let media of currentTeamMember.socialMedia"
+      >
+        <i [ngClass]="[media.iconClasses]"></i>
+      </a>
+    </div>
+  </div>
+</div>

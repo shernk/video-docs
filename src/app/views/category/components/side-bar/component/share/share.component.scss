@@ -1,0 +1,35 @@
+@import "src/styles/variables";
+
+
+#share-container {
+  display: grid;
+
+  #share-action {
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    grid-column-gap: 5px;
+
+    i,
+    h4 {
+      color: $green;
+      font-weight: bold;
+    }
+
+    i {
+      justify-self: end;
+      font-size: 20px;
+    }
+
+    h4 {
+      font-size: 15px;
+    }
+  }
+
+  #social-media {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: auto auto;
+    justify-items: center;
+  }
+}

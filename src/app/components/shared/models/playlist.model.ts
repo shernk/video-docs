@@ -1,0 +1,15 @@
+import { PlaylistItem } from "./playlist-item.model";
+
+export class Playlist {
+  public items: PlaylistItem[];
+
+  constructor(data?: any) {
+    const defaults = {
+      items: [],
+
+      ...data
+    };
+
+    this.items = defaults.items.map(playlistItem => new PlaylistItem(playlistItem));
+  }
+}
