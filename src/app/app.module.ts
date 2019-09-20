@@ -24,7 +24,7 @@ import { NgtUniversalModule } from '@ng-toolkit/universal';
     RouterModule.forRoot(APP_ROUTES, {
       scrollPositionRestoration: "enabled",
       anchorScrolling: "enabled",
-      onSameUrlNavigation: "reload"
+      initialNavigation: "enabled"
     }),
     SharedModule,
     CommonModule,
