@@ -11,8 +11,15 @@ export class HttpUtilityService extends AHttpUtilityService {
 
   private updateBase(): string {
     const { production: isProduction } = environment;
-    const productionBase = "video-docs-services.herokuapp.com/api/";
 
-    return isProduction ? productionBase : "http://localhost:3000/api";
+    const productionBase = "https://video-docs-services.herokuapp.com/api/";
+
+    /***
+    ** Eps31
+    ** Time: 50:00
+    * ! Failed to get http://localhost:3000/v1/category, status 404
+    */
+
+    return isProduction ? productionBase : "http://localhost:3000/api/";
   }
 }
