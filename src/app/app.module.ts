@@ -1,4 +1,5 @@
 import { HomeComponent } from "./views/home/home.component";
+import { HomeModule } from "./views/home/home.module";
 import { AlertService } from "./components/alert/services/alert/alert.service";
 import { SharedModule } from "./components/shared/shared.module";
 import { FooterComponent } from "./components/footer/footer.component";
@@ -16,12 +17,7 @@ import { OfflineOnlineService } from "./services/offline-online/offline-online.s
 import { NgtUniversalModule } from "@ng-toolkit/universal";
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    FooterComponent,
-    sideNavComponent,
-    HomeComponent
-  ],
+  declarations: [AppComponent, FooterComponent, sideNavComponent],
   imports: [
     BrowserModule.withServerTransition({ appId: "serverApp" }),
     RouterModule.forRoot(APP_ROUTES, {
