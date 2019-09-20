@@ -1,10 +1,9 @@
+import { HomeComponent } from './views/home/home.component';
 import { Routes } from "@angular/router";
 
 export const APP_ROUTES: Routes = [
   {
-    path: "",
-    loadChildren: () =>
-      import("./views/home/home.module").then(module => module.HomeModule)
+    path: "", component: HomeComponent
   },
   {
     path: "category",
