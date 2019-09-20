@@ -3,6 +3,7 @@
 
 footer {
   display: grid;
+  z-index: 2;
   grid-template-columns: 1fr 1fr;
   grid-column-gap: 20px;
   align-items: center;
