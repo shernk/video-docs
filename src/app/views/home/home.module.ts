@@ -6,8 +6,8 @@ import { HOME_ROUTES } from './home.routes';
 
 @NgModule({
   declarations: [HomeComponent],
-  imports: [
-    SharedModule
-  ]
+  // imports: [
+  //   SharedModule
+  // ]
 })
 export class HomeModule {}
