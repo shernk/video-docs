@@ -12,7 +12,10 @@
     "serve:ssr": "node dist/server",
     "build:ssr": "npm run build:client-and-server-bundles && npm run compile:server",
     "build:client-and-server-bundles": "ng build --prod && ng run video-docs:server:production --bundleDependencies all",
-    "heroku-postbuild": "ng build --prod"
+    "heroku-postbuild": "ng build --prod",
+    "dynamic:ssr": "npm run build:ssr && npm run serve:ssr",
+    "start:heroku": "node dist/server",
+    "postinstall": "npm run build:ssr --prod"
   },
   "private": true,
   "dependencies": {
@@ -41,7 +44,7 @@
     "@angular/cli": "^8.3.5",
     "@angular/compiler-cli": "~8.2.2",
     "@angular/language-service": "~8.2.2",
-    "@fortawesome/fontawesome-free": "^5.9.0",
+    "@fortawesome/fontawesome-free": "^5.11.1",
     "@types/jasmine": "~3.3.8",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
