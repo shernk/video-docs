@@ -1,5 +1,4 @@
 import { HomeComponent } from "./views/home/home.component";
-import { HomeModule } from "./views/home/home.module";
 import { AlertService } from "./components/alert/services/alert/alert.service";
 import { SharedModule } from "./components/shared/shared.module";
 import { FooterComponent } from "./components/footer/footer.component";
