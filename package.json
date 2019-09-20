@@ -19,7 +19,7 @@
     "heroku-postbuild": "ng build --prod",
     "dynamic:ssr": "npm run build:ssr && npm run serve:ssr",
     "start:heroku": "node dist/server",
-    "postinstall": "ng build --aot --target=production"
+    "postinstall": "ng build --aot"
   },
   "private": true,
   "dependencies": {
