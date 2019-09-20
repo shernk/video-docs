@@ -17,6 +17,7 @@ import { OfflineOnlineService } from "./services/offline-online/offline-online.s
 import { NgtUniversalModule } from "@ng-toolkit/universal";
 
 @NgModule({
+  // is to make components, directives, pipes, know inside the current module.
   declarations: [AppComponent, FooterComponent, sideNavComponent],
   imports: [
     BrowserModule.withServerTransition({ appId: "serverApp" }),
@@ -27,6 +28,7 @@ import { NgtUniversalModule } from "@ng-toolkit/universal";
       preloadingStrategy: PreloadAllModules
     }),
     SharedModule,
+    HomeModule,
     CommonModule,
     ServiceWorkerModule.register("ngsw-worker.js", {
       enabled: environment.production
@@ -36,4 +38,5 @@ import { NgtUniversalModule } from "@ng-toolkit/universal";
   providers: [AlertService, TitleService, OfflineOnlineService],
   bootstrap: [AppComponent]
 })
+// is to make components, directives, pipes, available to importing modules
 export class AppModule {}

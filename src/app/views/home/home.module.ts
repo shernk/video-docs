@@ -7,6 +7,7 @@ import { HOME_ROUTES } from './home.routes';
 @NgModule({
   declarations: [HomeComponent],
   imports: [
+    RouterModule.forChild(HOME_ROUTES),
     SharedModule
   ]
 })
