@@ -1,8 +1,9 @@
+import { Category } from "./../../models/category.model";
 import { PlaylistItem } from "./../../../../components/shared/models/playlist-item.model";
 import { Playlist } from "./../../../../components/shared/models/playlist.model";
 import { PLAYLIST_IDS } from "./../../../../components/shared/models/data/playlist-ids.data";
 import { ActivatedRoute, Params } from "@angular/router";
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Input } from "@angular/core";
 
 @Component({
   selector: "app-video-playlist",
@@ -10,12 +11,10 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./video-playlist.component.scss"]
 })
 export class VideoPlayListComponent implements OnInit {
-  public playlist: Playlist = new Playlist();
+  @Input() public category: Category = new Category();
   public selectedVideo: PlaylistItem = new PlaylistItem();
 
-  constructor(
-    public route: ActivatedRoute,
-  ) {}
+  constructor(public route: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
@@ -26,11 +25,11 @@ export class VideoPlayListComponent implements OnInit {
   private async updatePlayList(params: Params): Promise<void> {
     const playListId = PLAYLIST_IDS[params.id];
 
-
     this.selectVideo(playListId);
   }
 
   public selectVideo(videoId: string): void {
-    this.selectedVideo = this.playlist.items[videoId];
+    this.selectedVideo = this.category.playlist.items[videoId]
+    ;
   }
 }

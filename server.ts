@@ -22,7 +22,7 @@ import { join } from "path";
 
 // Express server
 const app = express();
-const ISPRODUCTION = process.env.isProduction ? "https://video-docs-services.herokuapp.com/api/" : false;
+const ISPRODUCTION = process.env.isProduction || false;
 const PORT = process.env.PORT || 4000;
 const DIST_FOLDER = join(process.cwd(), "dist/browser");
 

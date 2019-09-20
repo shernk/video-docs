@@ -23,9 +23,9 @@ describe("Video Play List Component", () => {
     });
 
     describe("Defaults", () => {
-      it("Has Play List", () => {
+      it("Has category", () => {
         // assert
-        expect(component.playlist).toBeDefined();
+        expect(component.category).toBeDefined();
       });
 
       it("Has Video Selected", () => {
@@ -37,15 +37,14 @@ describe("Video Play List Component", () => {
     describe("On Init", () => {
       it("Updates Play List", async() => {
         // arrange
-        component.playlist = null;
+        component.category.playlist = null;
         mockActivatedRoute.params = of({ id: "javascript" });
 
         // act
         component.ngOnInit();
 
         // assert
-
-        expect(component.playlist.items.length > 0).toBe(true);
+        expect(component.category.playlist.items.length > 0).toBe(true);
       });
     });
   });
