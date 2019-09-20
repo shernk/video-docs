@@ -15,7 +15,7 @@
     "compile:server": "webpack --config webpack.server.config.js --progress --colors",
     "serve:ssr": "node dist/server",
     "build:ssr": "npm run build:client-and-server-bundles && npm run compile:server",
-    "build:client-and-server-bundles": "ng build --configuration=prod && ng run video-docs:server:production --bundleDependencies all",
+    "build:client-and-server-bundles": "ng build --configuration=production && ng run video-docs:server:production --bundleDependencies all",
     "heroku-postbuild": "ng build --prod",
     "dynamic:ssr": "npm run build:ssr && npm run serve:ssr",
     "start:heroku": "node dist/server",
