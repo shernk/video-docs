@@ -34,6 +34,7 @@ app-side-bar {
 
   #video-container {
     display: grid;
+    padding-bottom: 20px;
     grid-gap: 10px;
     grid-template-columns: 1fr auto;
   }
