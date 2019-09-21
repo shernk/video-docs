@@ -1,14 +1,19 @@
 import { Routes } from "@angular/router";
 import { CategoryComponent } from "./category.component";
 import { TopicComponent } from './views/topic/topic.component';
+import { DetailComponent } from './views/detail/detail.component';
 
 export const CATEGORY_ROUTES: Routes = [
   {
-    path: ":id",
+    path: ":categoryId",
     component: CategoryComponent
   },
   {
-    path: ":id/topic/:topicId",
+    path: ":categoryId/topic/:topicId",
     component: TopicComponent
+  },
+  {
+    path: ":categoryId/topic/:topicId/detail/:detailId",
+    component: DetailComponent
   }
 ];

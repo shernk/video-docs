@@ -3,7 +3,7 @@
 
 footer {
   display: grid;
-  z-index: 2;
+  z-index: 99;
   grid-template-columns: 1fr 1fr;
   grid-column-gap: 20px;
   align-items: center;
@@ -11,7 +11,8 @@ footer {
   padding: 0 20px 0 20px;
   right: 0;
   width: 100vw;
-  position: absolute;
+  position: relative;
+  bottom: 0;
   overflow: hidden;
   color: $color;
   background-color: $quaternary-background;

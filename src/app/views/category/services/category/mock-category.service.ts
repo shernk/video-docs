@@ -14,4 +14,8 @@ export class MockCategoryService extends ACategoryService {
   public getCategoryTopic(categoryId: string, topicId: string): Promise<any> {
     return;
   }
+
+  public getCategoryDetail(categoryId: string, detailId: string): Promise<any> {
+    return;
+  }
 }

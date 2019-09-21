@@ -6,4 +6,8 @@ export abstract class ACategoryService {
     categoryId: string,
     topicId: string
   ): Promise<any>;
+  abstract async getCategoryDetail(
+    categoryId: string,
+    detailId: string
+  ): Promise<any>;
 }

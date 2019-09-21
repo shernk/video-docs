@@ -35,4 +35,8 @@ export class CategoryService extends ACategoryService {
   public async getCategoryTopic(categoryId: string, topicId: string) {
     return;
   }
+
+  public async getCategoryDetail(categoryId: string, detailId: string) {
+    return;
+  }
 }

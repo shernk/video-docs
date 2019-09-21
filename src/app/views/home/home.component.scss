@@ -3,7 +3,7 @@
   justify-items: center;
   height: 100%;
   width: 100%;
-  // position: fixed;
+  position: fixed;
 
   h1 {
     align-self: end;
@@ -13,7 +13,7 @@
   #main-categories {
     ul {
       display: grid;
-      grid-template-columns: auto /* auto auto */;
+      grid-template-columns: auto;
       grid-gap: 30px;
     }
     li {
@@ -21,14 +21,6 @@
       font-size: 100px;
 
       i {
-        &.fa-html5 {
-          color: #ff0707;
-        }
-
-        &.fa-css3-alt {
-          color: #0004ffea;
-        }
-
         &.fa-js {
           color: #fffb07;
         }

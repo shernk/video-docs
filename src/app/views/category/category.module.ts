@@ -25,6 +25,7 @@ import { ResourcesComponent } from "./components/resources/resources.component";
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { RouterModule } from "@angular/router";
+import { DetailComponent } from './views/detail/detail.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { RouterModule } from "@angular/router";
     LinkedinPostComponent,
     ResourcesComponent,
     HeaderComponent,
-    FacebookGroupComponent
+    FacebookGroupComponent,
+    DetailComponent
   ],
   providers: [
     {

@@ -1,8 +1,7 @@
 #site-container {
   display: grid;
   grid-template-columns: auto 1fr;
-  grid-template-areas:
-    "side-nav main";
+  grid-template-areas: "side-nav main" "side-nav footer";
 
   app-side-nav {
     grid-area: side-nav;
@@ -10,6 +9,10 @@
 
   main {
     grid-area: main;
-    padding: 20px 30px;
+    padding: 0px 30px;
+  }
+
+  app-footer {
+    grid-area: footer;
   }
 }

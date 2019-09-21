@@ -16,7 +16,7 @@ export class BreadCrumbsService {
   }
 
   private updateBreadCrumbs(url: string): void {
-    const nonValidUrlPieces = ['category', 'topic'];
+    const nonValidUrlPieces = ['category', 'topic', 'detail'];
     const validCrumbs = url.split("/")
                           .filter(piece => piece.length > 0 && !nonValidUrlPieces.includes(piece));
     validCrumbs[validCrumbs.length - 1] = this.removeHash(validCrumbs);
