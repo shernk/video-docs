@@ -1,6 +1,6 @@
 <app-card [title]="'Topics'" [iconClasses]="category.iconClasses">
   <div id="topics-container">
     <button *ngFor="let topic of category.topics"
-    [routerLink]="['category', category.simpleId, 'topic', topic.simpleId]">{{ topic.label }}</button>
+    [routerLink]="['topic', topic.simpleId]">{{ topic.label }}</button>
   </div>
 </app-card>

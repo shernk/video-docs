@@ -10,13 +10,13 @@ export class MockCategoryService extends ACategoryService {
     return new Category({ simpleId });
   }
 
-  public async getCategoryWithTopics(simpleId: string): Promise<Category> {
+  public async getCategoryWithTopics(simpleId: string,topicId: string): Promise<Category> {
     this.lastCategoryId = simpleId;
 
     return new Category({ simpleId });
   }
 
-  public async getCategoryWithDetails(simpleId: string): Promise<Category> {
+  public async getCategoryWithDetails(simpleId: string, detailId: string): Promise<Category> {
     this.lastCategoryId = simpleId;
 
     return new Category({ simpleId });

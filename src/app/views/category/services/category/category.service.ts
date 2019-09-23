@@ -30,7 +30,7 @@ export class CategoryService extends ACategoryService {
     }
   }
 
-  public async getCategoryWithTopics(categoryId: string): Promise<Category> {
+  public async getCategoryWithTopics(categoryId: string, topicId: string): Promise<Category> {
     try {
       const res = await this.http
         .get(`${this.base}/v1/category/${categoryId}/topics`)
@@ -42,7 +42,7 @@ export class CategoryService extends ACategoryService {
     }
   }
 
-  public async getCategoryWithDetails(categoryId: string): Promise<Category> {
+  public async getCategoryWithDetails(categoryId: string, detailId: string): Promise<Category> {
     try {
       const res = await this.http
         .get(`${this.base}/v1/category/${categoryId}/topics/detail`)
