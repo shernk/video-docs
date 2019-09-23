@@ -19,7 +19,7 @@ export class Category {
   constructor(data?: any) {
     const defaults = {
       id: "",
-      simgpleId: "",
+      simpleId: "",
       label: "",
       description: "",
       topics: [],
@@ -34,19 +34,13 @@ export class Category {
     this.simpleId = defaults.simpleId;
     this.label = defaults.label;
     this.description = defaults.description;
-
     this.topics = defaults.topics.map((topic: any) => new Topic(topic));
-
     this.tabContainers = defaults.tabContainers.map(
       tabContainer => new TabContainer(tabContainer)
     );
-
     this.books = defaults.books.map((book: any) => new Book(book));
-
     this.courses = defaults.courses.map((course: any) => new Course(course));
-
     this.playlist = new Playlist(defaults.playlist);
-
     this.iconClasses = this.getIconClasses(defaults.simpleId);
   }
 

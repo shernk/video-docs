@@ -18,15 +18,15 @@ export class DetailComponent implements OnInit {
 
   public ngOnInit(): void {
     this.route.params.subscribe(async params => {
-      const { id, detail } = params;
+      const { id } = params;
 
-      this.updateDetail(id, detail);
+      this.updateDetail(id);
       this.updateCategory(id);
     });
   }
 
-  private async updateDetail(categoryId: string, detailId: string): Promise<void> {
-    this.category = await this.categoryService.getCategoryDetail(categoryId, detailId);
+  private async updateDetail(categoryId: string): Promise<void> {
+    this.category = await this.categoryService.getCategoryWithDetails(categoryId);
   }
 
   private async updateCategory(categoryId: string): Promise<void> {

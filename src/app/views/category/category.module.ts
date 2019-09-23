@@ -26,6 +26,8 @@ import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { RouterModule } from "@angular/router";
 import { DetailComponent } from './views/detail/detail.component';
+import { TopiclistComponent } from './components/topic-list/topic-list.component';
+
 
 @NgModule({
   declarations: [
@@ -47,7 +49,8 @@ import { DetailComponent } from './views/detail/detail.component';
     ResourcesComponent,
     HeaderComponent,
     FacebookGroupComponent,
-    DetailComponent
+    DetailComponent,
+    TopiclistComponent
   ],
   providers: [
     {

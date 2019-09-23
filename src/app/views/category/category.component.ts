@@ -27,7 +27,7 @@ export class CategoryComponent implements OnInit {
     this.route.params.subscribe(async params => {
       const { categoryId } = params;
 
-      this.category = await this.categoryService.getCategory(categoryId);      
+      this.category = await this.categoryService.getCategoryWithTopics(categoryId);      
     });
   }
 }

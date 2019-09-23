@@ -1,0 +1,28 @@
+@import "src/styles/variables";
+
+#topics-container {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(4, 1fr);
+
+  button {
+    padding: 15px;
+    color: $green;
+    background-color: $tertiary-background;
+    border: none;
+    font-weight: bold;
+    text-transform: capitalize;
+
+    &:hover {
+      transition: all 0.2s;
+      color: white
+    }
+  }
+}
+
+@media screen and (min-width: $tablet){
+  #topics-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+

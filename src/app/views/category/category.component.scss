@@ -6,14 +6,13 @@
   grid-gap: 10px;
   grid-template-columns: 1fr 300px;
   margin-left: 50px;
+  // change UI at Ep37-1:50
   grid-template-areas:
     "breadCrumbs breadCrumbs"
     "header header"
     "topics topics"
+    "topicsl side-bar"
     "video side-bar"
-    "examples side-bar"
-    // "books side-bar"
-    // "courses side-bar";
     "app-card side-bar";
 }
 
@@ -29,6 +28,10 @@ app-side-bar {
   grid-area: side-bar;
 }
 
+app-topic-list {
+  grid-area: topicsl;
+}
+
 #video {
   grid-area: video;
 
@@ -40,15 +43,17 @@ app-side-bar {
   }
 }
 
-app-vertical-tabs {
-  grid-area: examples;
-}
+// app-vertical-tabs {
+//   grid-area: tabs;
+// }
+
 
 #topics {
   display: grid;
   grid-gap: 10px;
+  margin-bottom: 0;
   grid-area: topics;
-  grid-template-columns: 250px auto 300px;
+  grid-template-columns: 230px auto 300px;
   margin-top: 20px;
 
   #options {
@@ -75,7 +80,14 @@ app-card {
 @media screen and (max-width: $tablet) {
   #category-container,
   #topic-container {
-
+    // margin-left: 0;
+    // grid-template-columns: 1fr;
+    // grid-template-areas:
+    // 'breadCrumbs'
+    // 'header'
+    // 'topicsl'
+    // 'playlist'
+    // 'app-card';
 
     #video {
       #video-container {

@@ -26,7 +26,7 @@ export class AlertComponent implements OnInit {
       this.alert = new Alert(data);
     });
 
-    this.mustCallAlerts();
+    // this.mustCallAlerts(); // change at Ep37-14:00
   }
 
   public close(): void {

@@ -18,15 +18,15 @@ export class TopicComponent implements OnInit {
 
   public ngOnInit(): void {
     this.route.params.subscribe(async params => {
-      const { id, topic } = params;
+      const { id } = params;
 
-      this.updateTopic(id, topic);
+      this.updateTopic(id);
       this.updateCategory(id);
     });
   }
 
-  private async updateTopic(categoryId: string, topicId: string): Promise<void> {
-    this.category = await this.categoryService.getCategoryTopic(categoryId, topicId);
+  private async updateTopic(categoryId: string): Promise<void> {
+    this.category = await this.categoryService.getCategoryWithTopics(categoryId);
   }
 
   private async updateCategory(categoryId: string): Promise<void> {

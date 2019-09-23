@@ -10,9 +10,10 @@ footer {
   justify-content: end;
   padding: 0 20px 0 20px;
   right: 0;
-  width: 100vw;
+  width: 100%;
   position: relative;
   bottom: 0;
+  top: 10px;
   overflow: hidden;
   color: $color;
   background-color: $quaternary-background;

@@ -33,7 +33,7 @@ describe("Alert Component", () => {
     });
 
     describe("On Init", () => {
-      it("Calls cookie notification if not previously called", () => {
+      xit("Calls cookie notification if not previously called", () => {
         // arrange
         mockCategoryService.storage = {};
 

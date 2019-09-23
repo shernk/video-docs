@@ -22,8 +22,18 @@ export class CategoryService extends ACategoryService {
          * ! Failed to get http://localhost:3000/v1/category, status 404
          //// .get(`${this.base}/v1/category`)
          */
-        .get(`${this.base}/v1/category/${categoryId}`)
+        .get(`${this.base}/v1/category/${categoryId}`)    .toPromise();
 
+      return new Category(res);
+    } catch (err) {
+      return new Category();
+    }
+  }
+
+  public async getCategoryWithTopics(categoryId: string): Promise<Category> {
+    try {
+      const res = await this.http
+        .get(`${this.base}/v1/category/${categoryId}/topics`)
         .toPromise();
 
       return new Category(res);
@@ -32,11 +42,15 @@ export class CategoryService extends ACategoryService {
     }
   }
 
-  public async getCategoryTopic(categoryId: string, topicId: string) {
-    return;
-  }
+  public async getCategoryWithDetails(categoryId: string): Promise<Category> {
+    try {
+      const res = await this.http
+        .get(`${this.base}/v1/category/${categoryId}/topics/detail`)
+        .toPromise();
 
-  public async getCategoryDetail(categoryId: string, detailId: string) {
-    return;
+      return new Category(res);
+    } catch (err) {
+      return new Category();
+    }
   }
 }
