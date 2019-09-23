@@ -26,7 +26,7 @@ export class TopicComponent implements OnInit {
   }
 
   private async updateTopic(categoryId: string, topicId: string): Promise<void> {
-    this.category = await this.categoryService.getCategoryWithTopics(categoryId, topicId);
+    // this.category = await this.categoryService.getCategoryWithTopics(categoryId, topicId);
   }
 
   private async updateCategory(categoryId: string): Promise<void> {
