@@ -1,7 +1,7 @@
 import { Playlist } from "./../../../components/shared/models/playlist.model";
 import { TabContainer } from "./tab-container.model";
 import { Categories } from "./enums/categories.enum";
-import { Topic } from "./topic.model";
+import { Topic } from "./topic/topic.model";
 import { Book } from "src/app/components/shared/models/book.model";
 import { Course } from "src/app/components/shared/models/course.model";
 

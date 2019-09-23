@@ -1,5 +1,5 @@
 import { Category } from "./../category.model";
-import { Topic } from "./../topic.model";
+import { Topic } from "../topic/topic.model";
 import { Tab } from "../tab.model";
 import { Book } from "src/app/components/shared/models/book.model";
 
