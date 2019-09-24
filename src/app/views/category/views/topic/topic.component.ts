@@ -1,7 +1,10 @@
+import { Topic } from "./../../models/topic/topic.model";
+import { TopicService } from "./../../services/topic/topic.service";
 import { Category } from "./../../models/category.model";
 import { ActivatedRoute } from "@angular/router";
 import { Component, OnInit } from "@angular/core";
 import { ACategoryService } from "../../services/category/acategory.service";
+import { ATopicService } from "../../services/topic/atopic.service";
 
 @Component({
   selector: "app-topic",
@@ -10,10 +13,12 @@ import { ACategoryService } from "../../services/category/acategory.service";
 })
 export class TopicComponent implements OnInit {
   public category: Category = new Category();
+  public topic: Topic = new Topic();
 
   constructor(
     private route: ActivatedRoute,
-    private categoryService: ACategoryService
+    private categoryService: ACategoryService,
+    private topicService: ATopicService
   ) {}
 
   public ngOnInit(): void {
@@ -25,8 +30,14 @@ export class TopicComponent implements OnInit {
     });
   }
 
-  private async updateTopic(categoryId: string, topicId: string): Promise<void> {
-    // this.category = await this.categoryService.getCategoryWithTopics(categoryId, topicId);
+  private async updateTopic(
+    categoryId: string,
+    topicId: string
+  ): Promise<void> {
+    this.topic = await this.topicService.getTopicByCategoryId(
+      categoryId,
+      topicId
+    );
   }
 
   private async updateCategory(categoryId: string): Promise<void> {

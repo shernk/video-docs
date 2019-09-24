@@ -29,28 +29,4 @@ export class CategoryService extends ACategoryService {
       return new Category();
     }
   }
-
-  public async getCategoryWithTopics(categoryId: string, topicId: string): Promise<Category> {
-    try {
-      const res = await this.http
-        .get(`${this.base}/v1/category/${categoryId}/topics`)
-        .toPromise();
-
-      return new Category(res);
-    } catch (err) {
-      return new Category();
-    }
-  }
-
-  public async getCategoryWithDetails(categoryId: string, detailId: string): Promise<Category> {
-    try {
-      const res = await this.http
-        .get(`${this.base}/v1/category/${categoryId}/topics/detail`)
-        .toPromise();
-
-      return new Category(res);
-    } catch (err) {
-      return new Category();
-    }
-  }
 }

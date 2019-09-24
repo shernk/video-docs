@@ -1,4 +1,4 @@
-import { Component, Input, Type } from "@angular/core";
+import { Component, Input, OnInit } from "@angular/core";
 
 @Component({
   selector: "app-resources",
@@ -6,9 +6,9 @@ import { Component, Input, Type } from "@angular/core";
   styleUrls: ["./resources.component.scss"]
 })
 
-export class ResourcesComponent {
+export class ResourcesComponent implements OnInit {
   @Input() public title = '';
   @Input() public list: string[];
 
-  // constructor(public component: Type<any>) {}
+  public ngOnInit() {}
 }

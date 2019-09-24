@@ -27,6 +27,8 @@ import { CommonModule } from "@angular/common";
 import { RouterModule } from "@angular/router";
 import { DetailComponent } from './views/detail/detail.component';
 import { TopiclistComponent } from './components/topic-list/topic-list.component';
+import { ATopicService } from './services/topic/atopic.service';
+import { TopicService } from './services/topic/topic.service';
 
 
 @NgModule({
@@ -60,6 +62,10 @@ import { TopiclistComponent } from './components/topic-list/topic-list.component
     {
       provide: AHttpUtilityService,
       useClass: HttpUtilityService
+    },
+    {
+      provide: ATopicService,
+      useClass: TopicService
     },
     BreadCrumbsService
   ],

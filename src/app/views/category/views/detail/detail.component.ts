@@ -26,7 +26,7 @@ export class DetailComponent implements OnInit {
   }
 
   private async updateDetail(categoryId: string, detailId: string): Promise<void> {
-    this.category = await this.categoryService.getCategoryWithDetails(categoryId, detailId);
+    // this.category = await this.categoryService.getCategoryWithDetails(categoryId, detailId);
   }
 
   private async updateCategory(categoryId: string): Promise<void> {
