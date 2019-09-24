@@ -1,4 +1,5 @@
-import { AHttpUtilityService } from 'src/app/components/shared/services/http-utility/ahttp-utility.service';
+import { ResourcesService } from "./services/resources/resources.service";
+import { AHttpUtilityService } from "src/app/components/shared/services/http-utility/ahttp-utility.service";
 import { ACategoryService } from "./services/category/acategory.service";
 import { BreadCrumbsService } from "./components/bread-crumbs/service/bread-crumbs/bread-crumbs.service";
 import { BreadCrumbsComponent } from "./components/bread-crumbs/bread-crumbs.component";
@@ -17,19 +18,20 @@ import { ShareComponent } from "./components/side-bar/component/share/share.comp
 import { SupportComponent } from "./components/side-bar/component/support/support.component";
 import { TwitterPostComponent } from "./components/side-bar/component/share/twitter-post/twitter-post.component";
 import { TabItemsComponent } from "./components/vertical-tabs/components/tab-items/tab-items.component";
-import { TopicComponent } from './views/topic/topic.component';
-import { HeaderComponent } from './components/header/header.component';
-import { HttpUtilityService } from 'src/app/components/shared/services/http-utility/http-utility.service';
-import { FacebookGroupComponent } from './components/side-bar/component/facebook-group/facebook-group.component';
+import { TopicComponent } from "./views/topic/topic.component";
+import { HeaderComponent } from "./components/header/header.component";
+import { HttpUtilityService } from "src/app/components/shared/services/http-utility/http-utility.service";
+import { FacebookGroupComponent } from "./components/side-bar/component/facebook-group/facebook-group.component";
 import { ResourcesComponent } from "./components/resources/resources.component";
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { RouterModule } from "@angular/router";
-import { DetailComponent } from './views/detail/detail.component';
-import { TopiclistComponent } from './components/topic-list/topic-list.component';
-import { ATopicService } from './services/topic/atopic.service';
-import { TopicService } from './services/topic/topic.service';
-
+import { DetailComponent } from "./views/detail/detail.component";
+import { TopiclistComponent } from "./components/topic-list/topic-list.component";
+import { ATopicService } from "./services/topic/atopic.service";
+import { TopicService } from "./services/topic/topic.service";
+import { AResourcesService } from "./services/resources/aresources.service";
+import { CateComponent } from './views/cate/cate.component';
 
 @NgModule({
   declarations: [
@@ -37,22 +39,23 @@ import { TopicService } from './services/topic/topic.service';
     CategoryComponent,
     CourseComponent,
     DynamicContentComponent,
+    DetailComponent,
     SideBarComponent,
     ShareComponent,
     SupportComponent,
     TwitterPostComponent,
     TopicComponent,
     TabItemsComponent,
+    TopiclistComponent,
     TopicComponent,
-    VerticalTabsComponent,
     VideoComponent,
     VideoPlayListComponent,
     LinkedinPostComponent,
     ResourcesComponent,
+    VerticalTabsComponent,
     HeaderComponent,
     FacebookGroupComponent,
-    DetailComponent,
-    TopiclistComponent
+    CateComponent
   ],
   providers: [
     {
@@ -66,6 +69,10 @@ import { TopicService } from './services/topic/topic.service';
     {
       provide: ATopicService,
       useClass: TopicService
+    },
+    {
+      provide: AResourcesService,
+      useClass: ResourcesService
     },
     BreadCrumbsService
   ],
