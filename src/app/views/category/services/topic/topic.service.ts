@@ -22,10 +22,11 @@ export class TopicService extends ATopicService {
   ): Promise<TopicFull> {
     try {
       const res = await this.http
-      /***
+      /**
        * TODO: change route
-       * ? `${this.base}/v1/topics/${categoryId}/category/${topicId}`
+       * ? `${this.base}/v1/topics/${topicId}/category/${categoryId}`
        * TODO: change route at server
+       * ? '/:topicId/category/:categoryId'
        * TODO: watch again Ep37 at 1:54:10
        */
         .get(`${this.base}/v1/category/${categoryId}/topics/${topicId}`)
