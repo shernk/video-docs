@@ -1,3 +1,5 @@
+<!-- !change view in Ep38 at 31:41 -->
+
 <div id="category-container">
   <app-bread-crumbs></app-bread-crumbs>
 
@@ -7,10 +9,6 @@
 
   <app-topic-list [category]="category"></app-topic-list>
 
-  <div id="topics">
-    <app-resources [title]="'Resource'" [list]="resourceList"></app-resources>
-  </div>
-
   <div id="video">
     <app-card [iconClasses]="'fas fa-play'" [title]="'Video Doc'">
       <div id="video-container">
@@ -19,10 +17,6 @@
       </div>
     </app-card>
   </div>
-
-  <!-- <app-vertical-tabs
-    [tabContainers]="category.tabContainers"
-  ></app-vertical-tabs> -->
 
   <app-card [iconClasses]="'fas fa-book'" [title]="'Recommended Books'">
     <div id="books">

@@ -10,7 +10,14 @@ import { Category } from "./models/category.model";
   templateUrl: "./category.component.html",
   styleUrls: ["./category.component.scss"]
 })
+/**
+ * TODO: change CategoryComponent to documentationComponent
+ * Ep38
+ */
 export class CategoryComponent implements OnInit {
+  /**
+   * TODO: change category's info related to to resources's info, services
+   */
   public category = new Category();
 
   constructor(
