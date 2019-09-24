@@ -1,10 +1,9 @@
-import { Topic } from "./../../models/topic/topic.model";
-import { TopicService } from "./../../services/topic/topic.service";
 import { Category } from "./../../models/category.model";
 import { ActivatedRoute } from "@angular/router";
 import { Component, OnInit } from "@angular/core";
 import { ACategoryService } from "../../services/category/acategory.service";
 import { ATopicService } from "../../services/topic/atopic.service";
+import { TopicFull } from '../../models/topic/topic-full.model';
 
 @Component({
   selector: "app-topic",
@@ -13,7 +12,7 @@ import { ATopicService } from "../../services/topic/atopic.service";
 })
 export class TopicComponent implements OnInit {
   public category: Category = new Category();
-  public topic: Topic = new Topic();
+  public topic: TopicFull = new TopicFull();
 
   constructor(
     private route: ActivatedRoute,

@@ -43,7 +43,9 @@ div {
           color: white;
         }
         i {
-          display: none;
+          &.fa-caret-right {
+            display: none;
+          }
         }
       }
     }
