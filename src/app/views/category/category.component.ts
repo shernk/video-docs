@@ -12,7 +12,6 @@ import { Category } from "./models/category.model";
 })
 export class CategoryComponent implements OnInit {
   public category = new Category();
-  public resourceList = ["books", "courses"];
 
   constructor(
     private route: ActivatedRoute,
@@ -20,10 +19,10 @@ export class CategoryComponent implements OnInit {
   ) {}
 
   public ngOnInit(): void {
-    this.updateCategoryDate();
+    this.updateCategoryData();
   }
 
-  private updateCategoryDate(): void {
+  private updateCategoryData(): void {
     this.route.params.subscribe(async params => {
       const { categoryId } = params;
 
