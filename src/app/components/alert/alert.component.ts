@@ -10,6 +10,10 @@ import { LocalStorageKey } from "./../shared/models/enums/local-storage-key.enum
   templateUrl: "./alert.component.html",
   styleUrls: ["./alert.component.scss"]
 })
+/**
+ * ? at Ep38-1:04:30
+ * https://www.youtube.com/watch?v=-XOdRzNsjcY
+ */
 export class AlertComponent implements OnInit {
   public alert: Alert = new Alert();
   public alertTypes = AlertTypes;

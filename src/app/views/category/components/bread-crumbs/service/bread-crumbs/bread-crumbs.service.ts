@@ -4,6 +4,11 @@ import { NavigationEnd, Router } from "@angular/router";
 import { filter } from "rxjs/operators";
 
 @Injectable()
+/**
+ * TODO: watch again Ep38-50:00 util the end
+ * TODO: have to fixe the breadCrumbs
+ * https://www.youtube.com/watch?v=-XOdRzNsjcY
+ */
 export class BreadCrumbsService {
   public breadCrumbs: BreadCrumb[] = [];
 
