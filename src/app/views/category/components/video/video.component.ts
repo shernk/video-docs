@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, Input } from "@angular/core";
 import { DomSanitizer, SafeResourceUrl } from "@angular/platform-browser";
 
 @Component({
@@ -7,18 +7,23 @@ import { DomSanitizer, SafeResourceUrl } from "@angular/platform-browser";
   styleUrls: ["./video.component.scss"]
 })
 export class VideoComponent {
-  public hasBeenPlayed = false;
+  private embedUrl = "";
+  public backgroundImageUrl = "";
   public videoUrl: SafeResourceUrl = "";
+  @Input() public set videoId(value: string) {
+    if (value) {
+      this.embedUrl = `https://www.youtube.com/embed/${value}?autoplay=1`;
+      this.backgroundImageUrl = `https://i.ytimg.com/vi/${value}/hqdefault.jpg`;
+    }
+  }
 
   constructor(private sanitizer: DomSanitizer) {}
 
-  public playVideo() {
-    if (!this.hasBeenPlayed) {
+  public playVideo(): void {
+    if (!this.videoUrl) {
       this.videoUrl = this.sanitizer.bypassSecurityTrustResourceUrl(
-        "https://www.youtube.com/embed/gaYWg9967ZY?autoplay=1"
+        this.embedUrl
       );
     }
-
-    this.hasBeenPlayed = true;
   }
 }

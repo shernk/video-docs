@@ -1,13 +1,15 @@
-<!-- <iframe
-  class="youtube"
-  width="100%"
-  height="100%"
-  src="https://www.youtube.com/embed/gaYWg9967ZY"
-  frameborder="0"
-  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-  allowfullscreen
-></iframe> -->
-
-<div class="youtube pulse-grow-on-hover" (click)="playVideo()" id="FHC">
-  <iframe *ngIf="hasBeenPlayed" [src]="videoUrl" frameborder="0"></iframe>
+<div
+  class="youtube pulse-grow-on-hover"
+  [ngStyle]="{ 'background-image': 'url(' + backgroundImageUrl + ')' }"
+  (click)="playVideo()"
+>
+  <iframe
+    *ngIf="videoUrl"
+    [src]="videoUrl"
+    #videoIframe
+    frameborder="0"
+    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+  >
+  </iframe>
 </div>

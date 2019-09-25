@@ -1,15 +1,6 @@
-/* #topic-container {
+#topic-container {
   display: grid;
   grid-gap: 10px;
-  grid-template-columns: 1fr 250px;
-  grid-template-areas: 'breadCrumbs breadCrumbs' 'header .';
-
-  app-bread-crumbs {
-    grid-area: breadCrumbs;
-  }
-
-  app-header {
-    grid-area: header;
-  }
+  grid-template-columns: 1fr;
 }
- */
+
