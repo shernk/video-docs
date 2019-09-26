@@ -1,11 +1,13 @@
+import { PlaylistItem } from "./../../../../components/shared/models/playlist-item.model";
 import { MockActivatedRoute } from "./../../../../components/shared/mocks/mock-activated-route";
 import { VideoPlayListComponent } from "./video-playlist.component";
 import { of } from "rxjs";
+import { Playlist } from "src/app/components/shared/models/playlist.model";
 
 describe("Video Play List Component", () => {
   it("Can be built", () => {
     // arrange
-    const component = new VideoPlayListComponent(null);
+    const component = new VideoPlayListComponent();
 
     // assert
     expect(component instanceof VideoPlayListComponent).toBeDefined();
@@ -17,34 +19,36 @@ describe("Video Play List Component", () => {
 
     beforeEach(() => {
       mockActivatedRoute = new MockActivatedRoute();
-      component = new VideoPlayListComponent(
-        mockActivatedRoute,
-      );
+      component = new VideoPlayListComponent();
     });
 
     describe("Defaults", () => {
-      it("Has category", () => {
-        // assert
-        expect(component.category).toBeDefined();
-      });
-
       it("Has Video Selected", () => {
         // assert
         expect(component.selectedVideo).toBeDefined();
       });
-    });
 
-    describe("On Init", () => {
       it("Updates Play List", async() => {
         // arrange
-        component.category.playlist = null;
+        component.playlist = null;
         mockActivatedRoute.params = of({ id: "javascript" });
 
+        // assert
+        expect(component.playlist.items.length > 0).toBe(true);
+      });
+    });
+
+    describe("Selects Video", () => {
+      it("Updates video selection", () => {
+        // arrange
+        component.playlist = new Playlist({ items: [new PlaylistItem()] });
+        component.selectedVideo = null;
+
         // act
-        component.ngOnInit();
+        component.selectVideo(component.playlist.items[0]);
 
         // assert
-        expect(component.category.playlist.items.length > 0).toBe(true);
+        expect(component.selectedVideo).toBe(component.playlist.items[0]);
       });
     });
   });

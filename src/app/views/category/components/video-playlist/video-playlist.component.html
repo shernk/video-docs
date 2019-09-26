@@ -9,6 +9,7 @@
       *ngFor="let item of playlist.items"
       #selectedVideo
       [class.active]="item === selectedVideo"
+      (click)="selectVideo(item)"
     >
       <img [src]="item.thumnailUrl" [alt]="item.title" />
 

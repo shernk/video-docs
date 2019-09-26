@@ -2,7 +2,9 @@ import { HttpClient } from "@angular/common/http";
 import { AHttpUtilityService } from "src/app/components/shared/services/http-utility/ahttp-utility.service";
 import { AResourcesService } from "./aresources.service";
 import { Resources } from "../../models/resources.model";
+import { Injectable } from '@angular/core';
 
+@Injectable()
 export class ResourcesService extends AResourcesService {
   public base: string;
 

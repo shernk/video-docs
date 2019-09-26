@@ -1,5 +1,9 @@
 import { Routes } from "@angular/router";
 
+/**
+ * TODO: watch Ep41-2:05
+ */
+
 export const APP_ROUTES: Routes = [
   {
     path: "",
