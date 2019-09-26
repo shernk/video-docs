@@ -1,18 +1,19 @@
+import { Playlist } from "./../../../../components/shared/models/playlist.model";
 export class Topic {
-  public id: string;
   public label: string;
   public simpleId: string;
+  public playlist: Playlist;
 
   constructor(data?: any) {
     const defaults = {
-      id: "",
       label: "",
       simpleId: "",
+      playlist: [],
       ...data
     };
 
-    this.id = defaults.id;
     this.label = defaults.label;
     this.simpleId = defaults.simpleId;
+    this.playlist = new Playlist(defaults.playlist);
   }
 }

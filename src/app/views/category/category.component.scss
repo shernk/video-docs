@@ -6,7 +6,8 @@
   grid-gap: 10px;
   grid-template-columns: 1fr 300px;
   margin-left: 50px;
-  // change UI at Ep37-1:50
+  // 1.change UI at Ep37-1:50
+  // 2.change UI at Ep39-1:15:11
   grid-template-areas:
     "breadCrumbs breadCrumbs"
     "header header"
@@ -43,9 +44,9 @@ app-topic-list {
   }
 }
 
-// app-vertical-tabs {
-//   grid-area: tabs;
-// }
+app-vertical-tabs {
+  grid-area: examples;
+}
 
 
 #topics {

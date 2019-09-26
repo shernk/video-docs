@@ -16,7 +16,7 @@ import { Category } from "./models/category.model";
  */
 export class CategoryComponent implements OnInit {
   /**
-   * TODO: change category's info related to to resources's info, services
+   * TODO: change category's content related to to resources's content, services's related to content Ep38
    */
   public category = new Category();
 

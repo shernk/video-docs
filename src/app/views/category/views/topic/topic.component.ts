@@ -11,21 +11,19 @@ import { TopicFull } from '../../models/topic/topic-full.model';
   styleUrls: ["./topic.component.scss", "../../category.component.scss"]
 })
 export class TopicComponent implements OnInit {
-  public category: Category = new Category();
+  public categoryId = "";
   public topic: TopicFull = new TopicFull();
 
   constructor(
     private route: ActivatedRoute,
-    private categoryService: ACategoryService,
     private topicService: ATopicService
   ) {}
 
   public ngOnInit(): void {
     this.route.params.subscribe(async params => {
       const { categoryId, topicId } = params;
-
+      this.categoryId = this.route.snapshot.paramMap.get('categoryId');
       this.updateTopic(categoryId, topicId);
-      this.updateCategory(categoryId);
     });
   }
 
@@ -37,9 +35,5 @@ export class TopicComponent implements OnInit {
       categoryId,
       topicId
     );
-  }
-
-  private async updateCategory(categoryId: string): Promise<void> {
-    this.category = await this.categoryService.getCategory(categoryId);
   }
 }

@@ -1,3 +1,5 @@
+@import "src/styles/variables";
+
 .youtube {
   /* continer (responsive) */
   position: relative;
@@ -6,6 +8,7 @@
   padding-bottom: 56.25%;
   height: 0px;
   clear: both;
+  border: 1px solid $secondary-background;
 }
 
 .youtube::before {
@@ -24,7 +27,6 @@
   transition: all 0.1s ease;
   z-index: 1;
 }
-
 
 @-webkit-keyframes pulse-grow-on-hover {
   to {
