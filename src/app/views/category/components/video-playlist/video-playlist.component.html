@@ -9,12 +9,11 @@
       *ngFor="let item of playlist.items"
       #selectedVideo
       [class.active]="item === selectedVideo"
-      (click)="selectedVideo(item.videoId)"
     >
       <img [src]="item.thumnailUrl" [alt]="item.title" />
 
-      <div id="details" [class.active]="item === selectedVideo(item.videoId)">
-        <h4 [class.active]="item === selectedVideo(item.videoId)">
+      <div id="details" [class.active]="item === selectedVideo">
+        <h4 [class.active]="item === selectedVideo">
           {{ item.title }}
         </h4>
         <!-- <p><i class="far fa-clock"></i> 4m 30s</p> -->

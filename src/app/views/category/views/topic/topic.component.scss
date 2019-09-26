@@ -2,17 +2,4 @@
   display: grid;
   grid-gap: 10px;
   grid-template-columns: auto 1fr;
-  grid-template-areas: "header header" "playlist video";
-
-  app-header {
-    grid-area: header;
-  }
-
-  app-video-playlist {
-    grid-area: playlist;
-  }
-
-  app-video {
-    grid-area: video;
-  }
 }
