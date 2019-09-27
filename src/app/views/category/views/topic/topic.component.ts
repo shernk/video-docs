@@ -24,8 +24,8 @@ export class TopicComponent implements OnInit {
 
   public ngOnInit(): void {
     this.route.params.subscribe(async params => {
-      const { topicId } = params;
       const categoryId = this.route.snapshot.paramMap.get("categoryId");
+      const { topicId } = params;
       this.updateDetailPlaylist(categoryId, topicId);
       this.updateTopic(categoryId, topicId);
     });
@@ -53,8 +53,8 @@ export class TopicComponent implements OnInit {
     // this.updateHeader(this.topic);
   }
 
-  /* private updateHeader(topic: Topic, categorySimpleId: string): void {
-    const header = new Header({ ...topic, categorySimpleId });
+  /* private updateHeader(topic: Topic): void {
+    const header = new Header({ ...topic });
     this.headerService.callHeader(header);
   } */
 }

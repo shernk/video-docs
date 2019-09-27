@@ -19,24 +19,24 @@ export class DetailComponent implements OnInit {
 
   public ngOnInit(): void {
     this.route.params.subscribe(async params => {
-      const topicId = this.route.parent.snapshot.paramMap.get("topicId");
-      const { detailId } = params;
+      const categoryId = this.route.parent.snapshot.paramMap.get("categoryId");
+      const { topicId ,detailId } = params;
 
-      this.updateDetail();
+      this.updateDetail(categoryId, topicId, detailId);
     });
   }
 
-  private async updateDetail(): Promise<void> {
+  private async updateDetail(categorySimpleId: string, topicSimpleId: string,detailSimpleId: string): Promise<void> {
     this.detail = await this.detailService.getDetailByCategoryTopicSimpledId(
       "javascript",
-      "array",
-      "filter"
+      'array',
+      detailSimpleId
     );
     // this.updateHeader(this.detail);
   }
 
   // private updateHeader(detail: Detail): void {
-  //   const header = new Header({...detail, categorySimpleId: detail.simpleId});
+  //   const header = new Header({...detail });
   //   this.headerService.callHeader(header);
   // }
 }
