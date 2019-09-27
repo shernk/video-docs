@@ -1,0 +1,68 @@
+@import "src/styles/variables";
+
+header {
+  position: relative;
+  text-align: center;
+
+  img {
+    max-width: 100%;
+  }
+
+  h1 {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+#contact-form-container {
+  #contact-form {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-areas: "name email" "message message";
+    grid-template-columns: 1fr 1fr;
+
+    input[type="text"],
+    textarea {
+      padding-left: 33px;
+
+      &:focus {
+        outline-style: solid;
+        outline-color: $green;
+        outline-width: 3px;
+      }
+    }
+
+    #name {
+      grid-area: name;
+    }
+
+    #email {
+      grid-area: email;
+    }
+
+    #message {
+      grid-area: message;
+      position: relative;
+
+      i {
+        position: absolute;
+        top: 22px;
+        left: 18px;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    #name,
+    #email {
+      position: relative;
+      i {
+        position: absolute;
+        top: 50%;
+        left: 18px;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+}
