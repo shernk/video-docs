@@ -20,17 +20,24 @@ header {
   #contact-form {
     display: grid;
     grid-gap: 20px;
-    grid-template-areas: "name email" "message message";
     grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "name email"
+      "message message"
+      ". submit";
 
     input[type="text"],
     textarea {
       padding-left: 33px;
+    }
 
+    input,
+    textarea {
       &:focus {
-        outline-style: solid;
-        outline-color: $green;
-        outline-width: 3px;
+        & + i {
+          transition: all 0.3s;
+          color: $green;
+        }
       }
     }
 
@@ -63,6 +70,16 @@ header {
         left: 18px;
         transform: translate(-50%, -50%);
       }
+    }
+
+    button {
+      grid-area: submit;
+      padding: 10px 30px;
+      justify-self: end;
+      min-width: 30%;
+      background-color: $background-color;
+      color: white;
+      border: 1px solid $green;
     }
   }
 }
