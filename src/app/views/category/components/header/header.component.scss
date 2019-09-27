@@ -2,7 +2,9 @@
 
 header {
   display: grid;
-  grid-template-areas: "icon title" "description description";
+  grid-template-areas:
+    "icon title"
+    "description description";
   grid-template-columns: auto auto;
   grid-column-gap: 20px;
   align-items: center;

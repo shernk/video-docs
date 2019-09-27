@@ -31,7 +31,9 @@ import { TopiclistComponent } from "./components/topic-list/topic-list.component
 import { ATopicService } from "./services/topic/atopic.service";
 import { TopicService } from "./services/topic/topic.service";
 import { AResourcesService } from "./services/resources/aresources.service";
-import { CateComponent } from './views/cate/cate.component';
+import { CateComponent } from "./views/cate/cate.component";
+import { ADetailService } from "./services/detail/adetail.service";
+import { DetailService } from "./services/detail/detail.service";
 
 @NgModule({
   declarations: [
@@ -58,6 +60,7 @@ import { CateComponent } from './views/cate/cate.component';
     CateComponent
   ],
   providers: [
+    BreadCrumbsService,
     {
       provide: ACategoryService,
       useClass: CategoryService
@@ -74,7 +77,10 @@ import { CateComponent } from './views/cate/cate.component';
       provide: AResourcesService,
       useClass: ResourcesService
     },
-    BreadCrumbsService
+    {
+      provide: ADetailService,
+      useClass: DetailService
+    }
   ],
   imports: [RouterModule.forChild(CATEGORY_ROUTES), CommonModule, SharedModule],
   entryComponents: [ResourcesComponent]

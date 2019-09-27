@@ -1,8 +1,7 @@
-import { PlaylistItem } from "./../../../../components/shared/models/playlist-item.model";
+import { Detail } from "../../../../components/shared/models/detail.model";
 import { MockActivatedRoute } from "./../../../../components/shared/mocks/mock-activated-route";
 import { VideoPlayListComponent } from "./video-playlist.component";
 import { of } from "rxjs";
-import { Playlist } from "src/app/components/shared/models/playlist.model";
 
 describe("Video Play List Component", () => {
   it("Can be built", () => {
@@ -34,21 +33,21 @@ describe("Video Play List Component", () => {
         mockActivatedRoute.params = of({ id: "javascript" });
 
         // assert
-        expect(component.playlist.items.length > 0).toBe(true);
+        expect(component.playlist).toBe(true);
       });
     });
 
     describe("Selects Video", () => {
       it("Updates video selection", () => {
         // arrange
-        component.playlist = new Playlist({ items: [new PlaylistItem()] });
+        component.playlist = new Detail({ items: [new Detail()] });
         component.selectedVideo = null;
 
         // act
-        component.selectVideo(component.playlist.items[0]);
+        component.selectVideo(component.playlist);
 
         // assert
-        expect(component.selectedVideo).toBe(component.playlist.items[0]);
+        expect(component.selectedVideo).toBe(component.playlist[0]);
       });
     });
   });

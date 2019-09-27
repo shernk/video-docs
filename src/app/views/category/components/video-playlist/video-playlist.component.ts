@@ -1,5 +1,4 @@
-import { PlaylistItem } from "./../../../../components/shared/models/playlist-item.model";
-import { Playlist } from "./../../../../components/shared/models/playlist.model";
+import { Detail } from './../../../../components/shared/models/detail.model';
 import { Component, Input } from "@angular/core";
 
 @Component({
@@ -8,14 +7,14 @@ import { Component, Input } from "@angular/core";
   styleUrls: ["./video-playlist.component.scss"]
 })
 /**
- * ! Merge Playlist & PlaylistItem to Detail
+ * ! Merge Playlist & Detail to Detail
  * At Ep41 - 19:26
  */
 export class VideoPlayListComponent {
-  @Input() public playlist: Playlist = new Playlist();
-  public selectedVideo: PlaylistItem = new PlaylistItem();
+  @Input() public playlist: Detail = new Detail();
+  public selectedVideo: Detail = new Detail();
 
-  public selectVideo(video: PlaylistItem): void {
+  public selectVideo(video: Detail): void {
     this.selectedVideo = video;
   }
 }

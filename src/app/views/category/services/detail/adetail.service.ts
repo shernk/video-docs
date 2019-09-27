@@ -1,14 +1,14 @@
-import { PlaylistItem } from './../../../../components/shared/models/playlist-item.model';
+import { Detail } from "../../../../components/shared/models/detail.model";
 
 export abstract class ADetailService {
   public abstract async getDetailByCategoryTopic(
     categorySimpleId: string,
     topicSimpleId: string
-  ): Promise<PlaylistItem[]>;
+  ): Promise<Detail[]>;
 
   public abstract async getDetailByCategoryTopicSimpledId(
     categorySimpleId: string,
     topicSimpleId: string,
     detailSimpleId: string
-  ): Promise<PlaylistItem>;
+  ): Promise<Detail>;
 }

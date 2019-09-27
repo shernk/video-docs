@@ -1,4 +1,4 @@
-import { PlaylistItem } from "src/app/components/shared/models/playlist-item.model";
+import { Detail } from "src/app/components/shared/models/detail.model";
 import { HttpClient } from "@angular/common/http";
 import { AHttpUtilityService } from "src/app/components/shared/services/http-utility/ahttp-utility.service";
 import { ADetailService } from "./adetail.service";
@@ -17,7 +17,7 @@ export class DetailService extends ADetailService {
     categorySimpleId: string,
     topicSimpleId: string,
     detailSimpleId: string
-  ): Promise<PlaylistItem> {
+  ): Promise<Detail> {
     try {
       const res: any = await this.http
         .get(
@@ -25,16 +25,16 @@ export class DetailService extends ADetailService {
         )
         .toPromise();
 
-      return new PlaylistItem(res);
+      return new Detail(res);
     } catch (error) {
-      return new PlaylistItem();
+      return new Detail();
     }
   }
 
   public async getDetailByCategoryTopic(
     categorySimpleId: string,
     topicsSimpleId: string
-  ): Promise<PlaylistItem[]> {
+  ): Promise<Detail[]> {
     try {
       const res: any = await this.http
         .get(
@@ -42,7 +42,7 @@ export class DetailService extends ADetailService {
         )
         .toPromise();
 
-      return res.map((playlistItem: any) => new PlaylistItem(playlistItem));
+      return res.map((playlistItem: any) => new Detail(playlistItem));
     } catch (error) {
       return [];
     }
