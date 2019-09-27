@@ -19,5 +19,10 @@ export const APP_ROUTES: Routes = [
     path: "about",
     loadChildren: () =>
       import("./views/about/about.module").then(module => module.AboutModule)
+  },
+  {
+    path: "contact",
+    loadChildren: () =>
+      import("./views/contact/contact.module").then(module => module.ContactModule)
   }
 ];
