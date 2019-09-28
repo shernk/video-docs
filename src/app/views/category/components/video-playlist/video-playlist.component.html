@@ -1,23 +1,29 @@
 <div id="video-playlist">
   <header>
-    <h3><i class="fab fa-js"></i>{{ playlist.items }}</h3>
-    <small>4 / <!--{{ playlist.items.length --> }}</small>
+    <h3><i class="fab fa-js"></i><span class="is-hidden">Test</span></h3>
+    <small
+      >4 /
+      <!--{{ playlist.items.length -->
+      }}</small
+    >
   </header>
 
   <ul>
     <li
-      *ngFor="let item of playlist.items"
-      #selectedVideo
+      *ngFor="let item of playlist"
       [class.active]="item === selectedVideo"
       (click)="selectVideo(item)"
     >
-      <img [src]="item.thumnailUrl" [alt]="item.title" />
+      <img
+        [src]="item.thumnailUrl"
+        [alt]="item.label"
+        [routerLink]="[nextRouterPiece, item.simpleId]"
+      />
 
-      <div id="details" [class.active]="item === selectedVideo">
+      <div id="details" class="title" [class.active]="item === selectedVideo">
         <h4 [class.active]="item === selectedVideo">
-          {{ item.title }}
+          {{ item.label }}
         </h4>
-        <!-- <p><i class="far fa-clock"></i> 4m 30s</p> -->
       </div>
     </li>
   </ul>

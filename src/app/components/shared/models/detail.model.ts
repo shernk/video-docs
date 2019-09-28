@@ -4,7 +4,7 @@ export class Detail {
   public readonly topicSimpleId: string;
   public readonly videoId: string;
   public description: string;
-  public title: string;
+  public label: string;
   public thumnailUrl: string;
 
   constructor(data?: any) {
@@ -13,7 +13,7 @@ export class Detail {
       categorySimpleId: "",
       topicSimpleId: "",
       videoId: "",
-      title: "",
+      label: "",
       thumnailUrl: "",
       description: "",
 
@@ -25,7 +25,7 @@ export class Detail {
     this.topicSimpleId = defaults.topicSimpleId;
     this.videoId = defaults.videoId;
     this.description = defaults.description;
-    this.title = defaults.title;
+    this.label = defaults.label;
     this.thumnailUrl = `https://i.ytimg.com/vi/${this.videoId}/mqdefault.jpg`;
   }
 }

@@ -1,4 +1,4 @@
-import { Playlist } from "./../../../components/shared/models/playlist.model";
+import { Detail } from 'src/app/components/shared/models/detail.model';
 import { TabContainer } from "./tab-container.model";
 import { Categories } from "./enums/categories.enum";
 import { Topic } from "./topic/topic.model";
@@ -14,7 +14,7 @@ export class Category {
   public tabContainers: TabContainer[];
   public books: Book[];
   public courses: Course[];
-  public playlist: Playlist;
+  public playlist: Detail;
 
   constructor(data?: any) {
     const defaults = {
@@ -26,7 +26,7 @@ export class Category {
       tabContainers: [],
       books: [],
       courses: [],
-      playlist: new Playlist(),
+      playlist: new Detail(),
 
       ...data
     };
@@ -40,7 +40,7 @@ export class Category {
     );
     this.books = defaults.books.map((book: any) => new Book(book));
     this.courses = defaults.courses.map((course: any) => new Course(course));
-    this.playlist = new Playlist(defaults.playlist);
+    this.playlist = new Detail(defaults.playlist);
     this.iconClasses = this.getIconClasses(defaults.simpleId);
   }
 

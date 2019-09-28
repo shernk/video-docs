@@ -1,4 +1,4 @@
-import { Detail } from './../../../../components/shared/models/detail.model';
+import { Detail } from "./../../../../components/shared/models/detail.model";
 import { Component, Input } from "@angular/core";
 
 @Component({
@@ -11,7 +11,8 @@ import { Component, Input } from "@angular/core";
  * At Ep41 - 19:26
  */
 export class VideoPlayListComponent {
-  @Input() public playlist: Detail = new Detail();
+  @Input() public nextRouterPiece = "";
+  @Input() public playlist: Detail[] = [];
   public selectedVideo: Detail = new Detail();
 
   public selectVideo(video: Detail): void {
