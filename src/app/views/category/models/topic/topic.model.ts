@@ -1,8 +1,9 @@
-import { Playlist } from "./../../../../components/shared/models/playlist.model";
+import { Detail } from 'src/app/components/shared/models/detail.model';
+
 export class Topic {
   public label: string;
   public simpleId: string;
-  public playlist: Playlist;
+  public playlist: Detail;
 
   constructor(data?: any) {
     const defaults = {
@@ -14,6 +15,6 @@ export class Topic {
 
     this.label = defaults.label;
     this.simpleId = defaults.simpleId;
-    this.playlist = new Playlist(defaults.playlist);
+    this.playlist = new Detail(defaults.playlist);
   }
 }

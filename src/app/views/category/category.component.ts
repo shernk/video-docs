@@ -1,5 +1,7 @@
-import { ActivatedRoute, Params } from "@angular/router";
+import { ActivatedRoute } from "@angular/router";
 import { ACategoryService } from "./services/category/acategory.service";
+import { AResourcesService } from "./services/resources/aresources.service";
+import { Resources } from "./models/resources.model";
 
 import { Component, OnInit } from "@angular/core";
 import { Category } from "./models/category.model";
@@ -21,6 +23,10 @@ export class CategoryComponent implements OnInit {
   /**
    * TODO: Create Header Service to update header depend on API
    * *Ep42
+   */
+  /**
+   * TODO: Need to transform to cate(category) component.
+   * *Ep42 - 41:44
    */
   public category = new Category();
 
@@ -47,4 +53,25 @@ export class CategoryComponent implements OnInit {
   //   const header = new Header({...category, categorySimpleId: category.simpleId});
   //   this.headerService.callHeader(header);
   // }
+}
+
+//  ! this is a own content
+export class DocumentationComponent implements OnInit {
+  public resources = new Resources();
+
+  constructor(
+    private route: ActivatedRoute,
+    private resourcesService: AResourcesService
+  ) {}
+
+  public ngOnInit(): void {
+    this.updateResources();
+  }
+
+  private updateResources(): void {
+    this.route.params.subscribe(async params => {
+      const { categoryId } = params;
+      this.resources = await this.resourcesService.getResourcesById(categoryId);
+    });
+  }
 }

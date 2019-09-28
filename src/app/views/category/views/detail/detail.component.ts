@@ -10,6 +10,7 @@ import { ADetailService } from "../../services/detail/adetail.service";
 })
 export class DetailComponent implements OnInit {
   public detail: Detail = new Detail();
+  public detailPlaylist: Detail[] = [];
 
   constructor(
     private route: ActivatedRoute,
@@ -20,19 +21,34 @@ export class DetailComponent implements OnInit {
   public ngOnInit(): void {
     this.route.params.subscribe(async params => {
       const categoryId = this.route.parent.snapshot.paramMap.get("categoryId");
-      const { topicId ,detailId } = params;
+      const { topicId, detailId } = params;
 
       this.updateDetail(categoryId, topicId, detailId);
+      this.updateDetailPlaylist(categoryId, topicId);
     });
   }
 
-  private async updateDetail(categorySimpleId: string, topicSimpleId: string,detailSimpleId: string): Promise<void> {
+  private async updateDetail(
+    categorySimpleId: string,
+    topicSimpleId: string,
+    detailSimpleId: string
+  ): Promise<void> {
     this.detail = await this.detailService.getDetailByCategoryTopicSimpledId(
-      "javascript",
-      'array',
+      categorySimpleId,
+      topicSimpleId,
       detailSimpleId
     );
     // this.updateHeader(this.detail);
+  }
+
+  private async updateDetailPlaylist(
+    categorySimpleId: string,
+    topciSimpleId: string
+  ): Promise<void> {
+    this.detailPlaylist = await this.detailService.getDetailByCategoryTopic(
+      categorySimpleId,
+      topciSimpleId
+    );
   }
 
   // private updateHeader(detail: Detail): void {

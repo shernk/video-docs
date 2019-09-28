@@ -1,16 +1,5 @@
-<div id="category-container">
-  <app-bread-crumbs></app-bread-crumbs>
+<div id="detail-container">
+  <app-video-playlist [playlist]="detailPlaylist"></app-video-playlist>
 
-  <app-header [category]="detail"></app-header>
-
-  <app-side-bar> </app-side-bar>
-
-  <div id="video">
-    <app-card [iconClasses]="'fas fa-play'" [title]="'Video Doc'">
-      <div id="video-container">
-        <app-video></app-video>
-        <app-video-playlist [playlist]="detail.videoId" ></app-video-playlist>
-      </div>
-    </app-card>
-  </div>
+  <app-video [videoId]="detail.videoId"></app-video>
 </div>

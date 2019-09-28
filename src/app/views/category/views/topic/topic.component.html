@@ -1,11 +1,7 @@
 <div id="topic-container">
-  <app-header
-    [label]="topic.label"
-    [description]="topic.description"
-    [simpleId]="topic.simpleId"
-  ></app-header>
-
-  <app-video-playlist [playlist]="topic.playlist"></app-video-playlist>
+  <app-video-playlist [playlist]="detailPlaylist"></app-video-playlist>
 
   <app-video [videoId]="topic.videoId"></app-video>
+
+  <router-outlet></router-outlet>
 </div>

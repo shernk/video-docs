@@ -4,12 +4,11 @@ import { ATopicService } from "../../services/topic/atopic.service";
 import { TopicFull } from "../../models/topic/topic-full.model";
 import { Detail } from "src/app/components/shared/models/detail.model";
 import { ADetailService } from "../../services/detail/adetail.service";
-import { Topic } from "../../models/topic/topic.model";
 
 @Component({
   selector: "app-topic",
   templateUrl: "./topic.component.html",
-  styleUrls: ["./topic.component.scss", "../../category.component.scss"]
+  styleUrls: ["./topic.component.scss"]
 })
 export class TopicComponent implements OnInit {
   public topic: TopicFull = new TopicFull();
@@ -42,11 +41,11 @@ export class TopicComponent implements OnInit {
   }
 
   private async updateTopic(
-    categoryId: string,
+    categorySimpleId: string,
     topicId: string
   ): Promise<void> {
     this.topic = await this.topicService.getTopicByCategoryId(
-      categoryId,
+      categorySimpleId,
       topicId
     );
 

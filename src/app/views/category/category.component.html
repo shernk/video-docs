@@ -1,12 +1,11 @@
 <!-- !changed view in Ep38 at 31:41 -->
 <!-- !Will look view in Ep39 at 1:17:03 until the end -->
 
-<div id="category-container">
+<div id="category-container" id="documentation-container" >
   <app-bread-crumbs></app-bread-crumbs>
-
-  <app-header [category]="category"></app-header>
-
   <app-side-bar> </app-side-bar>
+  <app-header></app-header>
+
 
   <app-topic-list [category]="category"></app-topic-list>
 
@@ -32,4 +31,9 @@
   >
     <app-courses [courses]="category.courses"></app-courses>
   </app-card>
+
+  <div id="documentation-content" >
+    <router-outlet></router-outlet>
+  </div>
+
 </div>

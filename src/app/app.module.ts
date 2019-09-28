@@ -25,6 +25,7 @@ import { NgtUniversalModule } from "@ng-toolkit/universal";
       scrollPositionRestoration: "enabled",
       anchorScrolling: "enabled",
       initialNavigation: "enabled",
+      onSameUrlNavigation: 'reload',
       preloadingStrategy: PreloadAllModules
     }),
     SharedModule,
