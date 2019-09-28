@@ -1,4 +1,3 @@
-import { HomeComponent } from "./views/home/home.component";
 import { HomeModule } from "./views/home/home.module";
 import { AlertService } from "./components/alert/services/alert/alert.service";
 import { SharedModule } from "./components/shared/shared.module";
@@ -25,16 +24,16 @@ import { NgtUniversalModule } from "@ng-toolkit/universal";
       scrollPositionRestoration: "enabled",
       anchorScrolling: "enabled",
       initialNavigation: "enabled",
-      onSameUrlNavigation: 'reload',
+      onSameUrlNavigation: "reload",
       preloadingStrategy: PreloadAllModules
     }),
     SharedModule,
     HomeModule,
     CommonModule,
+    NgtUniversalModule,
     ServiceWorkerModule.register("ngsw-worker.js", {
       enabled: environment.production
     }),
-    NgtUniversalModule
   ],
   providers: [AlertService, TitleService, OfflineOnlineService],
   bootstrap: [AppComponent]

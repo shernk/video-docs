@@ -1,4 +1,3 @@
-import { Detail } from "../../../../components/shared/models/detail.model";
 import { MockActivatedRoute } from "./../../../../components/shared/mocks/mock-activated-route";
 import { VideoPlayListComponent } from "./video-playlist.component";
 import { of } from "rxjs";
@@ -33,21 +32,21 @@ describe("Video Play List Component", () => {
         mockActivatedRoute.params = of({ id: "javascript" });
 
         // assert
-        expect(component.playlist).toBe(true);
+        expect(component.playlist).toBe(null);
       });
     });
 
     describe("Selects Video", () => {
       it("Updates video selection", () => {
         // arrange
-        component.playlist = new Detail({ items: [new Detail()] });
+        component.playlist = [];
         component.selectedVideo = null;
 
         // act
-        component.selectVideo(component.playlist);
+        component.selectVideo(component.playlist[0]);
 
         // assert
-        expect(component.selectedVideo).toBe(component.playlist[0]);
+        expect(component.selectedVideo).toEqual(component.playlist[0]);
       });
     });
   });

@@ -1,9 +1,19 @@
-import { ActivatedRoute } from "@angular/router";
 import { of } from "rxjs";
 
-export class MockActivatedRoute extends ActivatedRoute {
+export class MockActivatedRoute {
+  public params: any;
+
+  public parent: any = {
+    snapShot: {
+      paramMap: {
+        get(id: string) {
+          return id;
+        }
+      }
+    }
+  };
+
   constructor() {
-    super();
     // Converts the arguments to an observable sequence.
     this.params = of({});
   }
