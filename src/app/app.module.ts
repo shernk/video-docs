@@ -14,6 +14,7 @@ import { environment } from "../environments/environment";
 import { TitleService } from "./services/title/title.service";
 import { OfflineOnlineService } from "./services/offline-online/offline-online.service";
 import { NgtUniversalModule } from "@ng-toolkit/universal";
+import { AAlertService } from "./components/alert/services/alert/aalert.service";
 
 @NgModule({
   // is to make components, directives, pipes, know inside the current module.
@@ -33,9 +34,13 @@ import { NgtUniversalModule } from "@ng-toolkit/universal";
     NgtUniversalModule,
     ServiceWorkerModule.register("ngsw-worker.js", {
       enabled: environment.production
-    }),
+    })
   ],
-  providers: [AlertService, TitleService, OfflineOnlineService],
+  providers: [
+    { provide: AAlertService, useClass: AlertService },
+    TitleService,
+    OfflineOnlineService
+  ],
   bootstrap: [AppComponent]
 })
 // is to make components, directives, pipes, available to importing modules

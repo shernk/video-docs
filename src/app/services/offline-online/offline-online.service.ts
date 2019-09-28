@@ -1,15 +1,15 @@
 import { Alert } from "src/app/components/alert/models/alert.model";
 import { AlertTypes } from "./../../components/alert/models/enums/alert-types.enum";
-import { AlertService } from "./../../components/alert/services/alert/alert.service";
 import { Injectable } from "@angular/core";
 import { Observable, fromEvent } from "rxjs";
+import { AAlertService } from 'src/app/components/alert/services/alert/aalert.service';
 
 @Injectable()
 export class OfflineOnlineService {
   public onlineEvent: Observable<Event>;
   public offlineEvent: Observable<Event>;
 
-  constructor(public alertService: AlertService) {}
+  constructor(public alertService: AAlertService) {}
 
   public init(): void {
     this.onlineEvent = fromEvent(window, "online");
