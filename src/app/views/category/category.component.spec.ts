@@ -1,8 +1,6 @@
+import { MockSeoService } from "./../../components/shared/seo/mock-seo.service";
 import { MockCategoryService } from "./services/category/mock-category.service";
 import { CategoryComponent } from "./category.component";
-import { ACategoryService } from "./services/category/acategory.service";
-import { of } from "rxjs/internal/observable/of";
-import { Categories } from "./models/enums/categories.enum";
 import { MockActivatedRoute } from "src/app/components/shared/mocks/mock-activated-route";
 
 describe("Category Component", () => {
@@ -13,7 +11,14 @@ describe("Category Component", () => {
 
   it("Can be built", () => {
     // act
-    const component = new CategoryComponent(null, null);
+    const categoryService = new MockCategoryService();
+    const mockActivatedRoute = new MockActivatedRoute();
+    const mockSeoService = new MockSeoService();
+    const component = new CategoryComponent(
+      mockActivatedRoute as any,
+      mockSeoService,
+      categoryService
+    );
 
     // assert
     expect(component instanceof CategoryComponent).toBe(true);
@@ -21,22 +26,27 @@ describe("Category Component", () => {
 
   describe("General", () => {
     let component: CategoryComponent;
-    let categoryService: ACategoryService;
-    let activatedRoute: any;
+    let categoryService: MockCategoryService;
+    let mockActivatedRoute: MockActivatedRoute;
+    let mockSeoService: MockSeoService;
 
     beforeEach(() => {
-      activatedRoute = new MockActivatedRoute();
-      activatedRoute.params = of({ id: Categories.JavaScript });
+      categoryService = new MockCategoryService();
+      mockActivatedRoute = new MockActivatedRoute();
+      mockSeoService = new MockSeoService();
 
-      component = new CategoryComponent(activatedRoute, categoryService);
+      component = new CategoryComponent(
+        mockActivatedRoute as any,
+        mockSeoService,
+        categoryService
+      );
       categoryService = new MockCategoryService();
     });
 
     describe("On init", () => {
-      // tslint:disable-next-line: space-before-function-paren
-      it("Update category", async () => {
+      it("Update category", async() => {
         // arrange
-        component.category.simpleId = 'javascript';
+        component.category.simpleId = "javascript";
 
         // act
         await component.ngOnInit();
@@ -44,6 +54,19 @@ describe("Category Component", () => {
         // assert
         expect(component.category.simpleId).toBe("javascript");
       });
+
+      /*  
+     it("Update header", async() => {
+        // arrange
+        component.category.lastHeader = "javascript";
+
+        // act
+        await component.ngOnInit();
+
+        // assert
+        expect(component.category.lastHeader).toBe("javascript");
+      }); 
+      */
     });
   });
 });

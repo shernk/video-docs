@@ -41,6 +41,7 @@
     "ordered-imports": false,
     "quotemark": [false, "double"],
     "no-trailing-whitespace": [false, "ignore-comments"],
+    "disable-next-line": "space-before-function-paren",
     "whitespace": [
       false,
       "check-branch",

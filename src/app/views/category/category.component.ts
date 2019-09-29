@@ -1,10 +1,12 @@
+import { MetaTags } from './../../components/shared/models/enums/meta-tags.enum';
+import { Header } from './models/header/header.model';
 import { ActivatedRoute } from "@angular/router";
 import { ACategoryService } from "./services/category/acategory.service";
 import { AResourcesService } from "./services/resources/aresources.service";
 import { Resources } from "./models/resources.model";
-
 import { Component, OnInit } from "@angular/core";
 import { Category } from "./models/category.model";
+import { ASeoService } from 'src/app/components/shared/seo/aseo.service';
 
 @Component({
   selector: "app-category",
@@ -14,6 +16,7 @@ import { Category } from "./models/category.model";
 /**
  * TODO: change CategoryComponent to documentationComponent
  * *Ep38
+ * TODO: stransfrom whole CategoryComponent's content to cateComponent and change the its name.
  */
 export class CategoryComponent implements OnInit {
   /**
@@ -33,26 +36,27 @@ export class CategoryComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     /* private headerService: AHeaderService */
+    private seoService: ASeoService,
     private categoryService: ACategoryService
   ) {}
 
   public ngOnInit(): void {
-    this.updateCategoryData();
-    // this.updateHeader(this.category);
-  }
-
-  private updateCategoryData(): void {
     this.route.params.subscribe(async params => {
       const { categoryId } = params;
-
       this.category = await this.categoryService.getCategory(categoryId);
+      // this.updateHeader(this.category);
     });
   }
 
   // private updateHeader(category: Category): void {
   //   const header = new Header({...category, categorySimpleId: category.simpleId});
   //   this.headerService.callHeader(header);
+  //   this.updateMetaDescription(header);
   // }
+
+  private updateMetaDescription(header: Header): void {
+    this.seoService.addMetaTag(MetaTags.Description, header.description);
+  }
 }
 
 //  ! this is a own content

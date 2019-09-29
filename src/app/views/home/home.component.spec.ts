@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { MockSeoService } from "./../../components/shared/seo/mock-seo.service";
 import { HomeComponent } from "./home.component";
 
 describe("Home Component", () => {
@@ -9,7 +9,8 @@ describe("Home Component", () => {
 
   it("Can be built", () => {
     // act
-    const component = new HomeComponent();
+    const mockSeoService = new MockSeoService();
+    const component = new HomeComponent(mockSeoService);
 
     // assert
     expect(component instanceof HomeComponent).toBe(true);
@@ -17,11 +18,12 @@ describe("Home Component", () => {
 
   describe("General", () => {
     let component: HomeComponent;
+    let mockSeoService: MockSeoService;
 
     beforeEach(() => {
-      component = new HomeComponent();
+      mockSeoService = new MockSeoService();
+
+      component = new HomeComponent(mockSeoService);
     });
-
-
   });
 });
