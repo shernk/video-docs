@@ -1,13 +1,17 @@
 import { ASeoService } from "./aseo.service";
 import { Meta } from "@angular/platform-browser";
-import { MetaTags } from '../models/enums/meta-tags.enum';
+import { MetaTags } from "../models/enums/meta-tags.enum";
 
 export class SeoService implements ASeoService {
   // description
   constructor(public meta: Meta) {}
 
   public addMetaTag(name: MetaTags, content: string): void {
-    this.meta.addTag({name, content});
+    const metaTag = this.meta.updateTag({ name, content });
+
+    if (!metaTag) {
+      this.meta.addTag({ name, content });
+    }
   }
 
   public addTwitterMeta() {
