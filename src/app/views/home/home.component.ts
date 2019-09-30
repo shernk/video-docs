@@ -1,7 +1,6 @@
 import { Component } from "@angular/core";
 import { ASeoService } from "src/app/components/shared/seo/aseo.service";
-import { stringify } from "@angular/compiler/src/util";
-import { MetaTags } from "src/app/components/shared/models/enums/meta-tags.enum";
+import { MetaTag } from "src/app/components/shared/models/enums/meta-tag.enum";
 
 @Component({
   selector: "app-home",
@@ -16,6 +15,6 @@ export class HomeComponent {
   private addMetaTags(): void {
     const descriptionContent =
       "VideoDevDocs is video based documentation for learning, testing, training developers of all skill sets.";
-    this.seoService.addMetaTag(MetaTags.Description, descriptionContent);
+    this.seoService.addMetaTag(MetaTag.Description, descriptionContent);
   }
 }

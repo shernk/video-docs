@@ -4,6 +4,7 @@ import { ATopicService } from "../../services/topic/atopic.service";
 import { TopicFull } from "../../models/topic/topic-full.model";
 import { Detail } from "src/app/components/shared/models/detail.model";
 import { ADetailService } from "../../services/detail/adetail.service";
+import { ASeoService } from 'src/app/components/shared/seo/aseo.service';
 
 @Component({
   selector: "app-topic",
@@ -18,7 +19,8 @@ export class TopicComponent implements OnInit {
     private route: ActivatedRoute,
     private topicService: ATopicService,
     /* private headerService: AHeaderService */
-    private detailService: ADetailService
+    private detailService: ADetailService,
+    private seoService: ASeoService
   ) {}
 
   public ngOnInit(): void {
@@ -55,5 +57,6 @@ export class TopicComponent implements OnInit {
   /* private updateHeader(topic: Topic): void {
     const header = new Header({ ...topic });
     this.headerService.callHeader(header);
+    this.seoService.addMetatag(MetaTag.Description, header.description);
   } */
 }

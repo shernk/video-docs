@@ -1,3 +1,3 @@
-export enum MetaTags {
+export enum MetaTag {
   Description = "description"
 }

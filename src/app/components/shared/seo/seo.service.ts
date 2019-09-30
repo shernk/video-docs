@@ -1,12 +1,12 @@
 import { ASeoService } from "./aseo.service";
 import { Meta } from "@angular/platform-browser";
-import { MetaTags } from "../models/enums/meta-tags.enum";
+import { MetaTag } from "../models/enums/meta-tag.enum";
 
 export class SeoService implements ASeoService {
   // description
   constructor(public meta: Meta) {}
 
-  public addMetaTag(name: MetaTags, content: string): void {
+  public addMetaTag(name: MetaTag, content: string): void {
     const metaTag = this.meta.updateTag({ name, content });
 
     if (!metaTag) {

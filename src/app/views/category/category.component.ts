@@ -1,4 +1,4 @@
-import { MetaTags } from './../../components/shared/models/enums/meta-tags.enum';
+import { MetaTag } from '../../components/shared/models/enums/meta-tag.enum';
 import { Header } from './models/header/header.model';
 import { ActivatedRoute } from "@angular/router";
 import { ACategoryService } from "./services/category/acategory.service";
@@ -55,7 +55,7 @@ export class CategoryComponent implements OnInit {
   // }
 
   private updateMetaDescription(header: Header): void {
-    this.seoService.addMetaTag(MetaTags.Description, header.description);
+    this.seoService.addMetaTag(MetaTag.Description, header.description);
   }
 }
 

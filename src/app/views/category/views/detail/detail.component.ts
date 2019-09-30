@@ -2,6 +2,7 @@ import { Detail } from "src/app/components/shared/models/detail.model";
 import { ActivatedRoute } from "@angular/router";
 import { Component, OnInit } from "@angular/core";
 import { ADetailService } from "../../services/detail/adetail.service";
+import { ASeoService } from "src/app/components/shared/seo/aseo.service";
 
 @Component({
   selector: "app-detail",
@@ -15,7 +16,8 @@ export class DetailComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     /* private headerService: AHeaderService */
-    private detailService: ADetailService
+    private detailService: ADetailService,
+    private seoService: ASeoService
   ) {}
 
   public ngOnInit(): void {
@@ -51,8 +53,11 @@ export class DetailComponent implements OnInit {
     );
   }
 
-  // private updateHeader(detail: Detail): void {
-  //   const header = new Header({...detail });
-  //   this.headerService.callHeader(header);
-  // }
+  /*
+  private updateHeader(detail: Detail): void {
+    const header = new Header({...detail });
+    this.headerService.callHeader(header);
+    this.seoService.addMetatag(MetaTag.Description, header.description);
+  }
+  */
 }
