@@ -21,9 +21,10 @@ export class CategoryService extends ACategoryService {
          ** Time: 50:00
          * ! Failed to get http://localhost:3000/v1/category, status 404
          * ? .get(`${this.base}/v1/category`)
-         * TODO: get rid of /api
+         * TODO: get rid of "/api"
          */
-        .get(`${this.base}/api/v1/category/${categoryId}`)    .toPromise();
+        .get(`${this.base}/api/v1/category/${categoryId}`)
+        .toPromise();
 
       return new Category(res);
     } catch (err) {

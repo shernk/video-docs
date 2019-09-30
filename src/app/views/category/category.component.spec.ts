@@ -55,7 +55,7 @@ describe("Category Component", () => {
         expect(component.category.simpleId).toBe("javascript");
       });
 
-      /*  
+      /*
      it("Update header", async() => {
         // arrange
         component.category.lastHeader = "javascript";
@@ -65,7 +65,7 @@ describe("Category Component", () => {
 
         // assert
         expect(component.category.lastHeader).toBe("javascript");
-      }); 
+      });
       */
     });
   });
