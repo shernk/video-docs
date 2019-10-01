@@ -58,6 +58,7 @@ export class DetailComponent implements OnInit {
     const header = new Header({...detail });
     this.headerService.callHeader(header);
     this.seoService.addMetatag(MetaTag.Description, header.description);
+    this.seoService.addTwitterMeta(header.description, this.detail.thumbnailUrl)
   }
   */
 }
