@@ -4,9 +4,7 @@ import { Meta, Title } from "@angular/platform-browser";
 
 export class SeoService implements ASeoService {
   // description
-  constructor(public meta: Meta, public titleSerive: Title) {
-    
-  }
+  constructor(public meta: Meta, public titleSerive: Title) {}
 
   public addMetaTag(name: MetaTag, content: string): void {
     this.handleMetaUpdate(name, content);
@@ -20,8 +18,6 @@ export class SeoService implements ASeoService {
     this.handleMetaUpdate(MetaTag.TwitterCreator, "@Sherk");
     this.handleMetaUpdate(MetaTag.TwitterDescription, imageUrl);
   }
-
-  public addOpenGraph() {}
 
   private handleMetaUpdate(name: MetaTag, content: string): void {
     const metaTag = this.meta.updateTag({ name, content });
