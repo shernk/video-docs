@@ -16,7 +16,6 @@
     "serve:ssr": "node dist/server",
     "build:ssr": "npm run build:client-and-server-bundles && npm run compile:server",
     "build:client-and-server-bundles": "ng build --configuration=production && ng run video-docs:server:production --bundleDependencies all",
-    "heroku-postbuild": "ng build --prod",
     "dynamic:ssr": "npm run build:ssr && npm run serve:ssr --prod",
     "start:heroku": "node dist/server",
     "postinstall": "ng build build:ssr --prod"
