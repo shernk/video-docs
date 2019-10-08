@@ -12,11 +12,23 @@
 1. HTTP & Client-Server
 ---
 # Have to do with high priority
+>>> Backend
+1. set API_KEY
+2. get API_GET
+3. check base
+4. route
+5. modified controller
+6. check PORT again
+7. get database (have to watch again video)
+8. get URI
+>>> Frontend
 1. set min screen css(625, 625)
 2. set footer for category page
 3. set area for component
 4. split category and documentation page & component
 5. fix bug frontend html, css
+6. check again title to totally understand the code how its works
+7. check again scrumb to actually understand the code how its works
 # Have to do with low priority
 1. edit sidebar
 2. edit side-nav-bar
