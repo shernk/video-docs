@@ -1,7 +1,7 @@
 import { AlertComponent } from "./alert.component";
 import { AlertService } from "./services/alert/alert.service";
 import { LocalStorageKey } from "./../shared/models/enums/local-storage-key.enum";
-import { MockCategoryService } from "./../shared/services/local-storage/mock-local-storage.model";
+import { MockCategoryService } from "./services/local-storage/mock-local-storage.model";
 
 describe("Alert Component", () => {
   it("Exists", () => {

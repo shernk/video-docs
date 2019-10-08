@@ -1,15 +1,13 @@
 # What did I learn?
-- MEAN stack
+  MEAN stack
 # dynamic content
-- #Ep45-4:18
+  #Ep45-4:18
 # Need to check
 #1 URL from frontend
 #2 PORT
 #3 Connect mongoDB
 #4 create own API data
 #5 base, URI
-# Learnt
-1. HTTP & Client-Server
 ---
 # Have to do with high priority
 >>> Backend
@@ -21,8 +19,11 @@
 6. check PORT again
 7. get database (have to watch again video)
 8. get URI
+9. HTTP Utility
+10. HTTP & Client-Server
+11. fixed /api/api route
 >>> Frontend
-1. set min screen css(625, 625)
+1. set min screen css(625px, 625px)
 2. set footer for category page
 3. set area for component
 4. split category and documentation page & component
@@ -33,4 +34,5 @@
 1. edit sidebar
 2. edit side-nav-bar
 3. set footer for home page
+4. re-construction folder
 

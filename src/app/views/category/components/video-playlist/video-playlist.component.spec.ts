@@ -1,6 +1,7 @@
 import { MockActivatedRoute } from "./../../../../components/shared/mocks/mock-activated-route";
 import { VideoPlayListComponent } from "./video-playlist.component";
 import { of } from "rxjs";
+import { Detail } from 'src/app/components/shared/models/detail.model';
 
 describe("Video Play List Component", () => {
   it("Can be built", () => {
@@ -47,6 +48,19 @@ describe("Video Play List Component", () => {
 
         // assert
         expect(component.selectedVideo).toEqual(component.playlist[0]);
+      });
+    });
+
+    describe("Video Playlist", () => {
+      it("Have any video items on playlist", () => {
+        // arrange
+        component.playlist = [];
+
+        // act
+        component.selectedVideo = component.playlist[0];
+
+        // assert
+        expect(component.playlist.length > 0).toBe(true);
       });
     });
   });

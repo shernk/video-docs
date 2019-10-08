@@ -1,7 +1,7 @@
 import { Alert } from "./models/alert.model";
 import { AlertTypes } from "./models/enums/alert-types.enum";
 import { AlertService } from "./services/alert/alert.service";
-import { ALocalStorage } from "../shared/services/local-storage/alocal-storage.model";
+import { ALocalStorage } from "./services/local-storage/alocal-storage.model";
 import { Component, OnInit } from "@angular/core";
 import { LocalStorageKey } from "./../shared/models/enums/local-storage-key.enum";
 
