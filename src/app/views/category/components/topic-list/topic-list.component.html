@@ -1,4 +1,4 @@
-<app-card [title]="'Topics'" [iconClasses]="category.iconClasses">
+<app-card [title]="'Topics'" [iconClasses]="'fas fa-lightbulb'">
   <div id="topics-container">
     <button *ngFor="let topic of category.topics"
     [routerLink]="['topic', topic.simpleId]">{{ topic.label }}</button>

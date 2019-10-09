@@ -15,14 +15,19 @@
 
     &:hover {
       transition: all 0.2s;
-      color: white
+      color: white;
     }
   }
 }
 
-@media screen and (min-width: $tablet){
+@media screen and (max-width: 768px) {
   #topics-container {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
+@media screen and (max-width: 425px) {
+  #topics-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
