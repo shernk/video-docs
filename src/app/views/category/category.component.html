@@ -1,42 +1,15 @@
-<!-- !changed view in Ep38 at 31:41 -->
-<!-- !Will look view in Ep39 at 1:17:03 until the end -->
-<!-- !Ep45 at 11:03 -->
-
-<div id="category-container" id="documentation-container" >
+<div id="category-container">
   <app-bread-crumbs></app-bread-crumbs>
+
   <app-side-bar> </app-side-bar>
+
   <app-header></app-header>
 
+  <app-book id="books" *ngFor="let book of category.books" [books]="book"></app-book>
 
-  <app-topic-list [category]="category"></app-topic-list>
+  <app-courses id="courses" [courses]="category.courses"></app-courses>
 
-  <div id="video">
-    <app-card [iconClasses]="'fas fa-play'" [title]="'Video Doc'">
-      <div id="video-container">
-        <app-video></app-video>
-        <app-video-playlist [playlist]="category" ></app-video-playlist>
-      </div>
-    </app-card>
-  </div>
-
-  <app-card [iconClasses]="'fas fa-book'" [title]="'Recommended Books'">
-    <div id="books">
-      <app-book *ngFor="let book of category.books" [book]="book"></app-book>
-    </div>
-  </app-card>
-
-  <app-card
-    id="courses"
-    [iconClasses]="'fas fa-play'"
-    [title]="'Recommended Courses'"
-  >
-    <app-courses [courses]="category.courses"></app-courses>
-  </app-card>
-
-  <div id="documentation-content" >
+  <div id="category-home-content">
     <router-outlet></router-outlet>
   </div>
-
 </div>
-
-
