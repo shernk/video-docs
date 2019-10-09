@@ -1,7 +1,6 @@
-import { MockActivatedRoute } from "./../../../../components/shared/mocks/mock-activated-route";
 import { VideoPlayListComponent } from "./video-playlist.component";
 import { of } from "rxjs";
-import { Detail } from 'src/app/components/shared/models/detail.model';
+import { MockActivatedRoute } from 'src/app/shared/mocks/mock-activated-route';
 
 describe("Video Play List Component", () => {
   it("Can be built", () => {

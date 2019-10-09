@@ -1,6 +1,5 @@
 import { Component, Input } from "@angular/core";
-import { TabContainer } from '../../models/tab-container.model';
-
+import { TabContainer } from "../../models/tab-container.model";
 
 @Component({
   selector: "app-vertical-tabs",
@@ -8,6 +7,5 @@ import { TabContainer } from '../../models/tab-container.model';
   styleUrls: ["./vertical-tabs.component.scss"]
 })
 export class VerticalTabsComponent {
-
   @Input() public tabContainers: TabContainer[] = [];
 }

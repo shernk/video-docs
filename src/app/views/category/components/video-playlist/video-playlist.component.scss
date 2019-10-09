@@ -1,82 +1,69 @@
-@import "src/styles/variables";
-
 #video-playlist {
-  display: grid;
-  max-width: 325px;
-  margin-bottom: 15px;
-  border: 1px solid $green;
-
   header {
+    background-color: #393939;
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: 1fr auto;
     align-items: center;
-    background-color: $green;
 
-    h3 {
-      display: grid;
-      grid-template-columns: auto auto;
-      margin: 0;
-      padding: 20px;
+    header h3 {
       color: white;
+      padding: 20px;
+      margin: 0;
 
-      i {
-        text-align: center;
-        align-self: center;
+      h3 {
+        i.fab.fa-js {
+          color: #f7ff00;
+        }
 
-        &.fab.fa-js {
-          color: $javascript;
+        .is-hidden {
+          display: none;
+        }
+
+        small {
+          padding-right: 20px;
+          text-align: right;
+          color: #929293;
         }
       }
     }
 
-    small {
-      text-align: center;
-      color: $light-grey;
-    }
-  }
+    ul {
+      margin-top: 0;
+      margin-bottom: 0;
+      border: 1px solid #393939;
+      max-height: 381px;
+      overflow-y: scroll;
 
-  ul {
-    // border: 1px solid $black;
-    // border-style: dashed;
-    padding-left: 5px;
-    padding-right: 5px;
-    margin: 0;
-    padding-top: 10px;
-    max-height: 500px;
-    overflow: scroll;
-    overflow-x: hidden;
-
-    li {
-      display: grid;
-      grid-template-columns: 100px 1fr;
-      margin-bottom: 10px; // inherit; // grid-template-rows: 110px;
-      grid-column-gap: 10px;
-      cursor: pointer;
-
-      &.active {
-        color: white;
-        background-color: $green;
-      }
-
-      img {
-        display: block;
-        max-width: 100px;
-      }
-
-      #details {
+      li {
+        padding: 5px;
         display: grid;
+        grid-template-columns: 100px 1fr;
 
-        h4,
-        p {
-          margin: 0;
+        &.active {
+          background-color: #007acc;
         }
-
+        img {
+          max-width: 100%;
+          display: block;
+        }
+        &.title {
+          display: none;
+          margin-left: 10px;
+        }
         h4 {
-          color: $green;
+          margin: 0;
+          color: #40c980;
 
           &.active {
             color: white;
-            background-color: $green;
+          }
+        }
+
+        div {
+          border-bottom: 1px solid #1e1e1e;
+
+          &.active {
+            border-bottom: 1px solid white;
           }
         }
       }
@@ -84,12 +71,18 @@
   }
 }
 
-@media screen and (max-width: $tablet) {
+@media screen and (max-width: 768px) {
   #video-playlist {
     max-width: 100%;
-
-    ul {
-      max-height: 350px;
-    }
+  }
+  header h3 .is-hidden {
+    padding-left: 5px;
+    display: inline-block;
+  }
+  ul {
+    max-height: 300px;
+  }
+  li .title {
+    display: block;
   }
 }

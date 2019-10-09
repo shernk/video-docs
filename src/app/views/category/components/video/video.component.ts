@@ -8,14 +8,15 @@ import { DomSanitizer, SafeResourceUrl } from "@angular/platform-browser";
 })
 export class VideoComponent {
   private embedUrl = "";
-  public backgroundImageUrl = "";
-  public videoUrl: SafeResourceUrl = "";
+  public thumbnailUrl = '';
   @Input() public set videoId(value: string) {
     if (value) {
+      this.videoUrl = '';
       this.embedUrl = `https://www.youtube.com/embed/${value}?autoplay=1`;
-      this.backgroundImageUrl = `https://i.ytimg.com/vi/${value}/hqdefault.jpg`;
+      this.thumbnailUrl = `https://i.ytimg.com/vi/${value}/hqdefault.jpg`;
     }
   }
+  public videoUrl: SafeResourceUrl = "";
 
   constructor(private sanitizer: DomSanitizer) {}
 

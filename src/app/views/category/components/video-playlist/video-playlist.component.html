@@ -1,10 +1,10 @@
 <div id="video-playlist">
   <header>
-    <h3><i class="fab fa-js"></i><span class="is-hidden">Test</span></h3>
-    <small
-      >4 /
-      <!--{{ playlist.items.length }} -->
-    </small>
+    <h3>
+      <i class="fab fa-js"></i>
+      <span class="is-hidden">Test</span>
+    </h3>
+    <small>4 / {{ playlist.length }}</small>
   </header>
 
   <ul>
@@ -14,15 +14,13 @@
       (click)="selectVideo(item)"
     >
       <img
-        [src]="item.thumnailUrl"
+        [src]="item.thumbnailUrl"
         [alt]="item.label"
-        [routerLink]="[nextRouterPiece, item.simpleId]"
+        [routerLink]="[nextRoutePiece, item.simpleId]"
       />
 
-      <div id="details" class="title" [class.active]="item === selectedVideo">
-        <h4 [class.active]="item === selectedVideo">
-          {{ item.label }}
-        </h4>
+      <div class="title" [class.active]="item === selectedVideo">
+        <h4 [class.active]="item === selectedVideo">{{ item.label }}</h4>
       </div>
     </li>
   </ul>
