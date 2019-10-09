@@ -1,4 +1,3 @@
-import { MetaTag } from '../../components/shared/models/enums/meta-tag.enum';
 import { Header } from './models/header/header.model';
 import { ActivatedRoute } from "@angular/router";
 import { ACategoryService } from "./services/category/acategory.service";
@@ -6,7 +5,8 @@ import { AResourcesService } from "./services/resources/aresources.service";
 import { Resources } from "./models/resources.model";
 import { Component, OnInit } from "@angular/core";
 import { Category } from "./models/category.model";
-import { ASeoService } from 'src/app/components/shared/seo/aseo.service';
+import { ASeoService } from 'src/app//shared/seo/aseo.service';
+import { MetaTag } from 'src/app/shared/models/enums/meta-tag.enum';
 
 @Component({
   selector: "app-category",

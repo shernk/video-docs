@@ -1,9 +1,9 @@
-import { Detail } from 'src/app/components/shared/models/detail.model';
 import { TabContainer } from "./tab-container.model";
 import { Categories } from "./enums/categories.enum";
 import { Topic } from "./topic/topic.model";
-import { Book } from "src/app/components/shared/models/book.model";
-import { Course } from "src/app/components/shared/models/course.model";
+import { Course } from 'src/app/shared/models/course.model';
+import { Book } from 'src/app/shared/models/book.model';
+import { Detail } from 'src/app/shared/models/detail.model';
 
 export class Category {
   public simpleId: string;

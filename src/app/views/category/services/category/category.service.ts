@@ -2,7 +2,7 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Category } from "../../models/category.model";
 import { ACategoryService } from "./acategory.service";
-import { AHttpUtilityService } from "src/app/components/shared/services/http-utility/ahttp-utility.service";
+import { AHttpUtilityService } from 'src/app/shared/services/http-utility/ahttp-utility.service';
 
 @Injectable()
 export class CategoryService extends ACategoryService {

@@ -1,5 +1,5 @@
-import { Course } from "src/app/components/shared/models/course.model";
-import { Book } from "./../../../components/shared/models/book.model";
+import { Book } from 'src/app/shared/models/book.model';
+import { Course } from 'src/app/shared/models/course.model';
 
 export class Resources {
   public books: Book[];

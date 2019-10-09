@@ -1,5 +1,6 @@
-import { LocalStorageKey } from "../../shared/models/enums/local-storage-key.enum";
-import { AlertTypes } from "./enums/alert-types.enum";
+import { AlertTypes } from './enums/alert-types.enum';
+import { LocalStorageKey } from '../../shared/models/enums/local-storage-key.enum';
+
 
 export class Alert {
   public type: AlertTypes;
@@ -9,8 +10,8 @@ export class Alert {
 
   constructor(data?: any) {
     const defaults = {
-      title: "",
-      content: "",
+      title: '',
+      content: '',
       ...data
     };
 

@@ -1,8 +1,8 @@
 import { HttpClient } from "@angular/common/http";
-import { AHttpUtilityService } from "src/app/components/shared/services/http-utility/ahttp-utility.service";
 import { Injectable } from "@angular/core";
 import { TopicFull } from "./../../models/topic/topic-full.model";
 import { ATopicService } from "./atopic.service";
+import { AHttpUtilityService } from 'src/app/shared/services/http-utility/ahttp-utility.service';
 
 @Injectable()
 export class TopicService extends ATopicService {

@@ -1,4 +1,3 @@
-import { JAVASCRIPT_DATA } from './../../../../views/category/models/data/javascript';
 import { Component, Input } from "@angular/core";
 
 @Component({

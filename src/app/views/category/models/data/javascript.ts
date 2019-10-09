@@ -1,7 +1,6 @@
 import { Category } from "./../category.model";
-import { Topic } from "../topic/topic.model";
 import { Tab } from "../tab.model";
-import { Book } from "src/app/components/shared/models/book.model";
+import { Book } from 'src/app/shared/models/book.model';
 
 export const JAVASCRIPT_DATA: Category = new Category({
   id: "javascript",

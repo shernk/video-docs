@@ -1,5 +1,5 @@
-import { Detail } from "./../../../../components/shared/models/detail.model";
 import { Component, Input } from "@angular/core";
+import { Detail } from 'src/app/shared/models/detail.model';
 
 @Component({
   selector: "app-video-playlist",

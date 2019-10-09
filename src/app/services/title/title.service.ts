@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { Router, NavigationEnd } from "@angular/router";
 import { filter } from "rxjs/operators";
 import { Title } from "@angular/platform-browser";
-import { DISPLAY_META_DATA } from "src/app/components/shared/models/data/display-meta-data.data";
+import { DISPLAY_META_DATA } from 'src/app/shared/models/data/display-meta-data.data';
 
 @Injectable({
   providedIn: "root"
@@ -47,7 +47,7 @@ export class TitleService {
     this.titleService.setTitle(capitalizeTitlePage);
   }
 
- /** 
+ /**
   * set title for only category page
   * the current scrumb or topic has choosen to representation
   */

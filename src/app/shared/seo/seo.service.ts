@@ -1,6 +1,6 @@
-import { MetaTag } from "src/app/components/shared/models/enums/meta-tag.enum";
 import { ASeoService } from "./aseo.service";
 import { Meta, Title } from "@angular/platform-browser";
+import { MetaTag } from '../models/enums/meta-tag.enum';
 
 export class SeoService implements ASeoService {
   // description

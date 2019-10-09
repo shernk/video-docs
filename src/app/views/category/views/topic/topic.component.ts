@@ -2,9 +2,9 @@ import { ActivatedRoute } from "@angular/router";
 import { Component, OnInit } from "@angular/core";
 import { ATopicService } from "../../services/topic/atopic.service";
 import { TopicFull } from "../../models/topic/topic-full.model";
-import { Detail } from "src/app/components/shared/models/detail.model";
 import { ADetailService } from "../../services/detail/adetail.service";
-import { ASeoService } from 'src/app/components/shared/seo/aseo.service';
+import { Detail } from 'src/app/shared/models/detail.model';
+import { ASeoService } from 'src/app/shared/seo/aseo.service';
 
 @Component({
   selector: "app-topic",

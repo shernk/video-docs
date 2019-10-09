@@ -1,4 +1,4 @@
-import { Detail } from 'src/app/components/shared/models/detail.model';
+import { Detail } from 'src/app/shared/models/detail.model';
 
 export class Topic {
   public label: string;

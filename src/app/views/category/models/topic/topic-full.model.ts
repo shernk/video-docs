@@ -1,5 +1,5 @@
-import { Detail } from './../../../../components/shared/models/detail.model';
 import { Topic } from "./topic.model";
+import { Detail } from 'src/app/shared/models/detail.model';
 
 export class TopicFull implements Topic {
   public categorySimpleId: string;

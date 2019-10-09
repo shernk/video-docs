@@ -1,4 +1,4 @@
-import { Detail } from "../../../../components/shared/models/detail.model";
+import { Detail } from 'src/app/shared/models/detail.model';
 
 export abstract class ADetailService {
   public abstract async getDetailByCategoryTopic(

@@ -1,6 +1,5 @@
 import { HomeModule } from "./views/home/home.module";
 import { AlertService } from "./components/alert/services/alert/alert.service";
-import { SharedModule } from "./components/shared/shared.module";
 import { FooterComponent } from "./components/footer/footer.component";
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
@@ -15,6 +14,7 @@ import { TitleService } from "./services/title/title.service";
 import { OfflineOnlineService } from "./services/offline-online/offline-online.service";
 import { NgtUniversalModule } from "@ng-toolkit/universal";
 import { AAlertService } from "./components/alert/services/alert/aalert.service";
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   // is to make components, directives, pipes, know inside the current module.

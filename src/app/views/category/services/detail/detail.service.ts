@@ -1,8 +1,8 @@
-import { Detail } from "src/app/components/shared/models/detail.model";
 import { HttpClient } from "@angular/common/http";
-import { AHttpUtilityService } from "src/app/components/shared/services/http-utility/ahttp-utility.service";
 import { ADetailService } from "./adetail.service";
 import { Injectable } from "@angular/core";
+import { AHttpUtilityService } from 'src/app/shared/services/http-utility/ahttp-utility.service';
+import { Detail } from 'src/app/shared/models/detail.model';
 
 @Injectable()
 export class DetailService extends ADetailService {

@@ -1,4 +1,4 @@
-import { DISPLAY_META_DATA } from "src/app/components/shared/models/data/display-meta-data.data";
+import { DISPLAY_META_DATA } from 'src/app/shared/models/data/display-meta-data.data';
 
 export class BreadCrumb {
   public label: string;

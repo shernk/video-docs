@@ -1,8 +1,8 @@
-import { Detail } from "src/app/components/shared/models/detail.model";
 import { ActivatedRoute } from "@angular/router";
 import { Component, OnInit } from "@angular/core";
 import { ADetailService } from "../../services/detail/adetail.service";
-import { ASeoService } from "src/app/components/shared/seo/aseo.service";
+import { ASeoService } from 'src/app/shared/seo/aseo.service';
+import { Detail } from 'src/app/shared/models/detail.model';
 
 @Component({
   selector: "app-detail",

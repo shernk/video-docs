@@ -1,5 +1,4 @@
 import { SocialMedia } from "./social-media.model";
-
 export class TeamMember {
   public firstName: string;
   public middleName: string;

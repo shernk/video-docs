@@ -22,6 +22,7 @@
 9. HTTP Utility
 10. HTTP & Client-Server
 11. fixed /api/api route
+12. Create own database API for team members.
 >>> Frontend
 1. set min screen css(625px, 625px)
 2. set footer for category page
@@ -31,6 +32,7 @@
 6. check again title to totally understand the code how its works
 7. check again scrumb to actually understand the code how its works
 # Have to do with low priority
+>>> Frontend
 1. edit sidebar
 2. edit side-nav-bar
 3. set footer for home page
@@ -38,4 +40,5 @@
 5. fixed footer go to bottom of the home page
 6. modified route(app.route.ts)
 7. fixed crrSubCategory(title.service.ts) to be dynamic with route URL or scrumb ro topic
+8. what is the local storage key for?
 

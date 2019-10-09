@@ -10,7 +10,6 @@ export const TEAM_MEMBERS_DATA = [
     occupation: "Programmer",
     description1: "No guts, no glory",
     description2:
-      // tslint:disable-next-line: max-line-length
       " If you want love, you have to go through your pain; If you want love, you have to learn how to change; If you want trust, you have to give some away",
     socialMedia: [
       new SocialMedia({
@@ -35,7 +34,6 @@ export const TEAM_MEMBERS_DATA = [
     occupation: "Programmer",
     description1: "No guts, no glory",
     description2:
-      // tslint:disable-next-line: max-line-length
       " If you want love, you have to go through your pain; If you want love, you have to learn how to change; If you want trust, you have to give some away",
     socialMedia: [
       new SocialMedia({

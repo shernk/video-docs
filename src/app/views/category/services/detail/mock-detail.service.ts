@@ -1,6 +1,5 @@
-import { Detail } from "../../../../components/shared/models/detail.model";
 import { ADetailService } from "./adetail.service";
-import { timingSafeEqual } from "crypto";
+import { Detail } from 'src/app/shared/models/detail.model';
 
 export class MockDetailService extends ADetailService {
   public lastCategorySimpleId = "";
