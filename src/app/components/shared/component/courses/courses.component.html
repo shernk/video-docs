@@ -1,15 +1,19 @@
-<section>
-  <article *ngFor="let course of courses">
-    <a [href]="course.url">
-      <img id="course-img" [src]="course.imageUrl" [alt]="course.imageAlt"
-    /></a>
-    <hr />
-    <div id="details">
-      <img [src]="course.authorImageUrl" [alt]="course.authorImageUrl" />
+<app-card [iconClasses]="'fas fa-play'" [title]="'Recommended Courses'">
+  <div id="courses-container">
+    <div id="course" *ngFor="let course of courses">
       <a [href]="course.url" target="blank">
-        <h3>{{ course.title }}</h3>
+        <img [src]="course.imageUrl" [alt]="course.title" />
       </a>
-      <p>{{ course.author }} - {{ course.time }}</p>
+      <hr />
+
+      <div id="details">
+        <img [src]="course.authorImageUrl" alt="Author" />
+
+        <a [href]="course.url" target="blank">
+          <h4>{{ course.title }}</h4>
+        </a>
+        <p>{{ course.author }}</p>
+      </div>
     </div>
-  </article>
-</section>
+  </div>
+</app-card>

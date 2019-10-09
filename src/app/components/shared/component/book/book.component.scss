@@ -1,67 +1,65 @@
 @import "../../../../../styles/variables.scss";
 
-app-card {
-  #books-container {
+#books-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+
+  #book {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 10px;
+    height: 100%;
+    grid-template-rows: 1fr;
 
-    #book {
+    #book-content {
       display: grid;
-      height: 100%;
-      grid-template-rows: 1fr;
+      grid-template-columns: 1fr auto;
+      background-color: $tertiary-background;
+      padding: 15px;
+      grid-column-gap: 20px;
 
-      #book-content {
-        display: grid;
-        grid-template-columns: 1fr auto;
-        background-color: $tertiary-background;
-        padding: 15px;
-        grid-column-gap: 20px;
-
-        img {
-          background-color: $black;
-          padding: 15px 30px;
-          display: block;
-          max-width: 160px;
-        }
-
-        #information {
-          display: grid;
-
-          h3 {
-            color: $orange;
-            margin-top: 0;
-            margin-bottom: 0;
-          }
-          p {
-            color: white;
-            margin-bottom: 0;
-          }
-        }
+      img {
+        background-color: $black;
+        padding: 15px 30px;
+        display: block;
+        max-width: 160px;
       }
 
-      #book-details {
+      #information {
         display: grid;
-        background-color: $tertiary-background;
 
-        hr {
-          margin: 0;
+        h3 {
+          color: $orange;
+          margin-top: 0;
+          margin-bottom: 0;
+        }
+        p {
+          color: white;
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    #book-details {
+      display: grid;
+      background-color: $tertiary-background;
+
+      hr {
+        margin: 0;
+      }
+
+      #rating {
+        display: grid;
+        font-size: 25px;
+        grid-template-columns: auto auto;
+        padding: 15px;
+
+        #buy,
+        i {
+          color: $orange;
         }
 
-        #rating {
-          display: grid;
-          font-size: 25px;
-          grid-template-columns: auto auto;
-          padding: 15px;
-
-          #buy,
-          i {
-            color: $orange;
-          }
-
-          #stars {
-            justify-self: end;
-          }
+        #stars {
+          justify-self: end;
         }
       }
     }

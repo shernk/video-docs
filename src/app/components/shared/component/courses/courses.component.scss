@@ -1,103 +1,52 @@
-@import "../../../../../styles/variables.scss";
-$padding: 15px;
-$gg: 10px;
+@import "src/styles/variable";
 
-//// make my own scss ////
-// section {
-//   display: grid;
-//   grid-gap: $gg;
-//   grid-template-columns: 1fr 1fr 1fr;
-
-//   article {
-//     background-color: $tertiary-background;
-//     padding: $padding;
-
-//     img {
-//       padding: 15px 20px;
-//       background-color: $black;
-//       // width: 100%;
-//     }
-
-//     #course-img {
-//       display: block;
-//       margin: 15px 30px;
-//     }
-
-//     #details {
-//       display: grid;
-//       // padding: $padding;
-//       grid-template-columns: auto auto;
-//       grid-template-areas: "author-pic title" "author-pic author-name";
-
-//       img {
-//         grid-area: author-pic;
-//       }
-
-//       h3,
-//       p {
-//         margin-top: 0;
-//         margin-bottom: 0;
-//         // justify-self: end;
-//       }
-
-//       h3 {
-//         grid-area: title;
-//         color: $orange;
-//       }
-
-//       p {
-//         align-self: end;
-//         color: white;
-//       }
-//     }
-//   }
-// }
-
-section {
+#courses-container {
   display: grid;
-  grid-gap: $gg;
+  grid-gap: 10px;
+  max-width: 1200px;
   grid-template-columns: 1fr 1fr 1fr;
 
-  article {
+  #course {
+    padding: 15px;
     background-color: $tertiary-background;
-    padding: $padding;
-    margin-bottom: 15px;
 
-    #course-img{
-      margin: 0px 50px;
+    img {
+      width: 100%;
     }
 
     #details {
       display: grid;
-      grid-template-columns: 1fr 3fr;
-      grid-template-areas: "author-pic title" "author-pic author-name";
+      grid-template-columns: 1fr 4fr;
+      grid-column-gap: 10px;
+      grid-template-areas:
+        "author-pic title"
+        "author-pic author-name";
 
-      img,
-      h3,
-      p {
-        padding-right: 10px;
-        padding-left: 10px;
-      }
-
-      img{
-        grid-area: author-pic;
-        padding: 0;
-        display: block;
-        width: 100%;
+      img {
         border-radius: 50%;
+        display: block;
+        grid-area: author-pic;
       }
-
-
-      h3 {
+      h4 {
         grid-area: title;
         margin: 0;
         color: $orange;
       }
-
       p {
+        grid-area: author-name;
         color: white;
-        align-self: end;
+        margin: 0;
       }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #courses-container {
+    grid-template-columns: 1fr;
+
+    a {
+      align-self: end;
     }
   }
 }
