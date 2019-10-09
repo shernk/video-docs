@@ -1,6 +1,9 @@
-import { Component, Input } from "@angular/core";
-import { Category } from '../../models/category.model';
+import { Component, Injectable } from "@angular/core";
+import { Header } from "../../models/header/header.model";
+import { AIconService } from "src/app/shared/services/icon/aicon.service";
+import { AHeaderService } from "./service/aheader.service";
 
+Injectable();
 @Component({
   selector: "app-header",
   templateUrl: "./header.component.html",
@@ -8,10 +11,34 @@ import { Category } from '../../models/category.model';
 })
 export class HeaderComponent {
   /**
-   * TODO: watch again Eps38 at 35:00
+   * create object of model to access to get data have available
    */
-  @Input() public category: Category = new Category();
-  @Input() public label = '';
-  @Input() public description = '';
-  @Input() public simpleId = '';
+  public header: Header = new Header();
+  /**
+   * create the `sample` to connect between the logic `model-view` (the logic is programming into component) and view(html)
+   */
+  public iconClasses = "";
+  public categoryCSSClass = "";
+
+  /**
+   * constructor where set; get; the service
+   */
+  constructor(
+    public iconService: AIconService,
+    public headerService: AHeaderService
+  ) {
+    this.headerService.headerSubject.subscribe(header => {
+      this.header = header;
+      this.updateStyles(this.header.simpleId);
+    });
+  }
+
+  /**
+   * Programming to set the logic between the service and
+   * the `sample`
+   */
+  private updateStyles(categorySimpleId: string): void {
+    this.iconClasses = this.iconService.getIconByCategoryID(categorySimpleId);
+    this.categoryCSSClass = categorySimpleId;
+  }
 }

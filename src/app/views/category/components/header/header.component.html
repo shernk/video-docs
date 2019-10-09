@@ -1,8 +1,5 @@
 <header>
-  <!-- ! Cannot get icon, simpleId and description of the header -->
-  <!-- ! Eps32 - Time: 25:22 -->
-    <i [ngClass]="['category.iconClasses', 'category.simpleId']"></i>
-    <h1>{{ category.label }}</h1>
-
-    <p>{{ category.description }}</p>
-  </header>
+  <i [ngClass]="[iconClasses, categoryCSSClass]"></i>
+  <h1>{{ header.label }}</h1>
+  <p>{{ header.description }}</p>
+</header>
