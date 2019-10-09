@@ -1,3 +1,4 @@
+import { HeaderService } from './components/header/service/header.service';
 import { ResourcesService } from "./services/resources/resources.service";
 import { ACategoryService } from "./services/category/acategory.service";
 import { BreadCrumbsService } from "./components/bread-crumbs/service/bread-crumbs/bread-crumbs.service";
@@ -28,12 +29,13 @@ import { TopiclistComponent } from "./components/topic-list/topic-list.component
 import { ATopicService } from "./services/topic/atopic.service";
 import { TopicService } from "./services/topic/topic.service";
 import { AResourcesService } from "./services/resources/aresources.service";
-import { CateComponent } from "./views/cate/cate.component";
+import { CategoryHomeComponent } from "./views/category-home/category-home.component";
 import { ADetailService } from "./services/detail/adetail.service";
 import { DetailService } from "./services/detail/detail.service";
 import { SharedModule } from 'src/app/shared/shared.module';
 import { HttpUtilityService } from 'src/app/shared/services/http-utility/http-utility.service';
 import { AHttpUtilityService } from 'src/app/shared/services/http-utility/ahttp-utility.service';
+import { AHeaderService } from './components/header/service/aheader.service';
 
 @NgModule({
   declarations: [
@@ -57,7 +59,7 @@ import { AHttpUtilityService } from 'src/app/shared/services/http-utility/ahttp-
     VerticalTabsComponent,
     HeaderComponent,
     FacebookGroupComponent,
-    CateComponent
+    CategoryHomeComponent
   ],
   providers: [
     BreadCrumbsService,
@@ -80,6 +82,10 @@ import { AHttpUtilityService } from 'src/app/shared/services/http-utility/ahttp-
     {
       provide: ADetailService,
       useClass: DetailService
+    },
+    {
+      provide: AHeaderService,
+      useClass: HeaderService
     }
   ],
   imports: [RouterModule.forChild(CATEGORY_ROUTES), CommonModule, SharedModule],

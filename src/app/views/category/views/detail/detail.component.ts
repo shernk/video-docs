@@ -1,8 +1,11 @@
 import { ActivatedRoute } from "@angular/router";
 import { Component, OnInit } from "@angular/core";
 import { ADetailService } from "../../services/detail/adetail.service";
-import { ASeoService } from 'src/app/shared/seo/aseo.service';
-import { Detail } from 'src/app/shared/models/detail.model';
+import { ASeoService } from "src/app/shared/seo/aseo.service";
+import { Detail } from "src/app/shared/models/detail.model";
+import { AHeaderService } from "../../components/header/service/aheader.service";
+import { MetaTag } from "src/app/shared/models/enums/meta-tag.enum";
+import { Header } from "../../models/header/header.model";
 
 @Component({
   selector: "app-detail",
@@ -15,7 +18,7 @@ export class DetailComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    /* private headerService: AHeaderService */
+    private headerService: AHeaderService,
     private detailService: ADetailService,
     private seoService: ASeoService
   ) {}
@@ -40,7 +43,7 @@ export class DetailComponent implements OnInit {
       topicSimpleId,
       detailSimpleId
     );
-    // this.updateHeader(this.detail);
+    this.updateHeader(this.detail);
   }
 
   private async updateDetailPlaylist(
@@ -53,12 +56,13 @@ export class DetailComponent implements OnInit {
     );
   }
 
-  /*
   private updateHeader(detail: Detail): void {
-    const header = new Header({...detail });
+    const header = new Header({ ...detail });
     this.headerService.callHeader(header);
-    this.seoService.addMetatag(MetaTag.Description, header.description);
-    this.seoService.addTwitterMeta(header.description, this.detail.thumbnailUrl)
+    this.seoService.addMetaTag(MetaTag.Description, header.description);
+    this.seoService.addTwitterMeta(
+      header.description,
+      this.detail.thumbnailUrl
+    );
   }
-  */
 }

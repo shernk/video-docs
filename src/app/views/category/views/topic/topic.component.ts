@@ -5,6 +5,10 @@ import { TopicFull } from "../../models/topic/topic-full.model";
 import { ADetailService } from "../../services/detail/adetail.service";
 import { Detail } from 'src/app/shared/models/detail.model';
 import { ASeoService } from 'src/app/shared/seo/aseo.service';
+import { AHeaderService } from '../../components/header/service/aheader.service';
+import { Topic } from '../../models/topic/topic.model';
+import { Header } from '../../models/header/header.model';
+import { MetaTag } from 'src/app/shared/models/enums/meta-tag.enum';
 
 @Component({
   selector: "app-topic",
@@ -18,7 +22,7 @@ export class TopicComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private topicService: ATopicService,
-    /* private headerService: AHeaderService */
+    private headerService: AHeaderService,
     private detailService: ADetailService,
     private seoService: ASeoService
   ) {}
@@ -51,12 +55,12 @@ export class TopicComponent implements OnInit {
       topicId
     );
 
-    // this.updateHeader(this.topic);
+    this.updateHeader(this.topic);
   }
 
-  /* private updateHeader(topic: Topic): void {
+  private updateHeader(topic: Topic): void {
     const header = new Header({ ...topic });
     this.headerService.callHeader(header);
-    this.seoService.addMetatag(MetaTag.Description, header.description);
-  } */
+    this.seoService.addMetaTag(MetaTag.Description, header.description);
+  }
 }

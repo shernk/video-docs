@@ -7,6 +7,7 @@ import { Component, OnInit } from "@angular/core";
 import { Category } from "./models/category.model";
 import { ASeoService } from 'src/app//shared/seo/aseo.service';
 import { MetaTag } from 'src/app/shared/models/enums/meta-tag.enum';
+import { AHeaderService } from './components/header/service/aheader.service';
 
 @Component({
   selector: "app-category",
@@ -35,7 +36,7 @@ export class CategoryComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    /* private headerService: AHeaderService */
+    private headerService: AHeaderService,
     private seoService: ASeoService,
     private categoryService: ACategoryService
   ) {}
@@ -48,11 +49,11 @@ export class CategoryComponent implements OnInit {
     });
   }
 
-  // private updateHeader(category: Category): void {
-  //   const header = new Header({...category, categorySimpleId: category.simpleId});
-  //   this.headerService.callHeader(header);
-  //   this.updateMetaDescription(header);
-  // }
+  private updateHeader(category: Category): void {
+    const header = new Header({...category, categorySimpleId: category.simpleId});
+    this.headerService.callHeader(header);
+    this.updateMetaDescription(header);
+  }
 
   private updateMetaDescription(header: Header): void {
     this.seoService.addMetaTag(MetaTag.Description, header.description);
