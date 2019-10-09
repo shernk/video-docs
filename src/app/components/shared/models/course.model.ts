@@ -3,18 +3,16 @@ export class Course {
   public title: string;
   public author: string;
   public authorImageUrl: string;
-  public time: string;
   public url: string;
 
   constructor(data?: any) {
     const defaults = {
-      imageUrl: "https://via.placeholder.com/320x180",
-      title: "",
-      author: "",
-      authorImageUrl: 'https://via.placeholder.com/70x70',
-      time: "",
+      imageUrl: 'https://via.placeholder.com/640x360',
+      title: '',
+      author: '',
+      time: '',
+      authorImageUrl: '',
       url: '',
-
       ...data
     };
 
@@ -22,7 +20,6 @@ export class Course {
     this.title = defaults.title;
     this.author = defaults.author;
     this.authorImageUrl = defaults.authorImageUrl;
-    this.time = defaults.time;
     this.url = defaults.url;
   }
 }
