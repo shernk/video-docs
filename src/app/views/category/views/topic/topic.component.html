@@ -1,7 +1,7 @@
 <div id="topic-container">
-  <app-video-playlist [playlist]="detailPlaylist" [nextRouterPiece]="'detail'" ></app-video-playlist>
+  <app-video-playlist id="playlist" [playlist]="detailPlaylist" [nextRouterPiece]="'detail'" ></app-video-playlist>
 
-  <app-video [videoId]="topic.videoId"></app-video>
+  <app-video id="video" [videoId]="topic.videoId"></app-video>
 
   <router-outlet></router-outlet>
 </div>
