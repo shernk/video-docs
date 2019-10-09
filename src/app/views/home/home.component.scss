@@ -3,7 +3,6 @@
   justify-items: center;
   height: 100%;
   width: 100%;
-  position: fixed;
 
   h1 {
     align-self: end;
@@ -23,6 +22,13 @@
       i {
         &.fa-js {
           color: #fffb07;
+        }
+
+        &.fa-css3-alt {
+          color: #4666ff;
+        }
+        &.fa-js {
+          color: #f7ff00;
         }
       }
     }
