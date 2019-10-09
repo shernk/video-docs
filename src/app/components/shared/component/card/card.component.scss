@@ -1,22 +1,12 @@
-@import "../../../../../styles/variables.scss";
-
 div {
-  display: grid;
-  background-color: $background-color;
-
-  h2 {
-    color: white;
-    padding: 20px;
-    padding-bottom: 0;
-    margin-top: auto;
-
-    i {
-      padding-right: 5px;
-    }
-  }
-
-  #card-body {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
+  display: block;
+  background-color: #252525;
+  padding: 20px;
+}
+div h2 {
+  color: white;
+  margin-top: 0;
+}
+div #card-body {
+  padding: 0;
 }
