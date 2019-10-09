@@ -1,17 +1,76 @@
 <nav [class.is-closed]="isClosed" [class.is-open]="!isClosed">
   <ul>
     <li id="logo">
-      <i *ngIf="isClosed" (click)="openMenu()" [class.is-open]="!isClosed" class="fas fa-bars"></i>
-      <img id="logo-img" src="../../../assets/image/filmhunterlogo.png" alt="Error" *ngIf="!isClosed" (click)="closeMenu()"/>
-      <i class="fas fa-chevron-left" *ngIf="!isClosed" (click)="closeMenu()"></i>
+      <i
+        *ngIf="isClosed"
+        (click)="openMenu()"
+        [class.is-open]="!isClosed"
+        class="fas fa-bars"
+      ></i>
+      <img
+        id="logo-img"
+        src="../../../assets/image/filmhunterlogo.png"
+        alt="Error"
+        *ngIf="!isClosed"
+        (click)="closeMenu()"
+        [routerLink]="['']"
+      />
+      <i
+        class="fas fa-chevron-left"
+        *ngIf="!isClosed"
+        (click)="closeMenu()"
+      ></i>
     </li>
+    <hr />
 
-    <!-- <li id="search" *ngIf="!isClosed" (click)="closeMenu()"><i class="fas fa-search"></i></li>
-
-    <li (click)="openMenu()" [routerLink]="['category/html']" [routerLinkActive]="'active-route'"><i class="fab fa-html5" [routerLinkActive]="'active-route'"></i></li>
-
-    <li (click)="openMenu()" [routerLink]="['category/css']" [routerLinkActive]="'active-route'" ><i class="fab fa-css3-alt" [routerLinkActive]="'active-route'"></i></li> -->
-
-    <li (click)="openMenu()" [routerLink]="['category/javascript']" [routerLinkActive]="'active-route'"><i class="fab fa-js"></i></li>
+    <!-- (click)="openMenu()" -->
+    <!-- [routerLinkActive]="'active-route'" -->
+    <li
+      [routerLink]="['category/javascript']"
+    >
+      <i class="fab fa-js" [routerLinkActive]="'active-route'"></i>
+    </li>
   </ul>
 </nav>
+
+<!-- <nav [class.is-closed]="isClosed" [class.is-open]="!isClosed">
+  <ul>
+    <li id="logo">
+      <i
+        class="fas fa-bars"
+        [class.is-open]="!isClosed"
+        (click)="openMenu()"
+      ></i>
+      <img
+        id="logo-img"
+        src="assets/icons/icon-72x72.png"
+        alt="logo"
+        [routerLink]="['']"
+        (click)="closeMenu()"
+      />
+      <div
+        [class.is-closed]="isClosed"
+        [routerLink]="['']"
+        (click)="closeMenu()"
+      >
+        Video Dev Docs
+      </div>
+      <i
+        *ngIf="!isClosed"
+        class="fas fa-chevron-left"
+        (click)="closeMenu()"
+      ></i>
+    </li>
+    <hr />
+
+    <li
+      [routerLink]="['category/javascript']"
+      [routerLinkActive]="'active-route'"
+      (click)="closeMenu()"
+    >
+      <i class="fab fa-js" [routerLinkActive]="'active-route'"></i>
+      <span [class.is-closed]="isClosed">JavaScript</span>
+    </li>
+  </ul>
+</nav> -->
+"

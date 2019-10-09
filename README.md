@@ -35,4 +35,5 @@
 2. edit side-nav-bar
 3. set footer for home page
 4. re-construction folder
+5. fixed footer go to bottom of the home page
 
