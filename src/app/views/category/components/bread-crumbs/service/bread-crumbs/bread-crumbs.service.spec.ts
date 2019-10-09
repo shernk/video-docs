@@ -1,6 +1,6 @@
 import { NavigationEnd } from "@angular/router";
 import { BreadCrumbsService } from "./bread-crumbs.service";
-import { MockRouter } from "src/app/components/shared/mocks/mock-router";
+import { MockRouter } from 'src/app/shared/mocks/mock-router';
 
 describe("Bread Crumbs Service", () => {
   it("Can be built", () => {
@@ -31,8 +31,8 @@ describe("Bread Crumbs Service", () => {
         service = new BreadCrumbsService(mockRouter as any);
 
         // assert
-        expect(service.breadCrumbs[0].label).toBe("JavaScript");
-        expect(service.breadCrumbs[1].label).toBe("Arrays");
+        expect(service.breadCrumbsSubject[0].label).toBe("JavaScript");
+        expect(service.breadCrumbsSubject[1].label).toBe("Arrays");
       });
 
       it("Removes hash from bread crumbs url piece", () => {
@@ -47,8 +47,8 @@ describe("Bread Crumbs Service", () => {
         service = new BreadCrumbsService(mockRouter as any);
 
         // assert
-        expect(service.breadCrumbs[0].label).toBe("JavaScript");
-        expect(service.breadCrumbs[1].label).toBe("Arrays");
+        expect(service.breadCrumbsSubject[0].label).toBe("JavaScript");
+        expect(service.breadCrumbsSubject[1].label).toBe("Arrays");
       });
     });
   });

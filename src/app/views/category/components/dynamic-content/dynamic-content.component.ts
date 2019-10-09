@@ -1,6 +1,5 @@
-import { ResourcesComponent } from "./../resources/resources.component";
+import { DYNAMIC_CONTENT_KEYS } from "./dynamic-content.enum";
 import {
-  Type,
   Component,
   ViewChild,
   ViewContainerRef,
@@ -11,31 +10,23 @@ import {
   ComponentRef
 } from "@angular/core";
 
-// import { DynamicDirective } from "./dynamic.directive";
-import { DYNAMIC_CONTENT } from "./dynamic-content.enum";
-
 @Component({
   selector: "app-dynamic-content",
   template: `
     <div>
-      <h3>Dynamic Component</h3>
-      <ng-template #content></ng-template>
+      <div #content></div>
     </div>
   `
 })
 export class DynamicContentComponent implements OnInit, OnDestroy {
+  @ViewChild("container", { static: true, read: ComponentRef })
+  container: ViewContainerRef;
+
   @Input() public type: string;
   @Input() public context: any;
 
-  @ViewChild("content", { static: true, read: ComponentRef })
-  container: ViewContainerRef;
-
-  // dynamicContainer: DynamicDirective;
-  // interval: any;
-  // currentAdIndex = -1;
-
   private componentRef: ComponentRef<{}>;
-  private mappings = DYNAMIC_CONTENT;
+  private mappings = DYNAMIC_CONTENT_KEYS;
 
   constructor(private componentFactoryResolver: ComponentFactoryResolver) {}
 
@@ -46,53 +37,31 @@ export class DynamicContentComponent implements OnInit, OnDestroy {
         componentType
       );
       // Represents a component created by a ComponentFactory.
-      this.componentRef = this.container.createComponent(factory) as any;
+      this.componentRef = this.container.createComponent(factory);
 
-      (this.componentRef.instance as any) = { ...this.context };
-
-      // this.loadComponent();
-      // this.getContent();
+      this.updateInputs(this.componentRef.instance);
     }
   }
 
-  ngOnDestroy() {
+  public updateInputs(instance: any): void {
+    const keys = Object.keys(this.context);
+    instance.context = this.context;
+
+    for (const key of keys) {
+      instance[key] = this.context[key];
+    }
+  }
+
+  public ngOnDestroy() {
     if (this.componentRef) {
       this.componentRef.destroy();
       this.componentRef = null;
     }
-
-    // clearInterval(this.interval);
   }
 
-  getComponentType(typeName?: any) {
+  private getComponentType(typeName: string): any {
     const type = this.mappings[typeName];
+
     return type;
   }
-
-  /*  loadComponent() {
-    // this.currentAdIndex = (this.currentAdIndex + 1) % this.mappings;
-    // const adItem = this.ads[this.currentAdIndex];
-
-    const componentType = this.getComponentType(this.type);
-
-    const componentFactory = this.componentFactoryResolver.resolveComponentFactory(
-      componentType
-    );
-
-    console.log(componentType);
-    console.log(componentFactory);
-
-    const viewContainerRef = this.dynamicContainer.viewContainerRef;
-    viewContainerRef.clear();
-
-    const componentRef = viewContainerRef.createComponent(componentFactory);
-
-    (componentRef.instance as any) = { ...this.context };
-  } */
-
-  /* getContent() {
-    this.interval = setInterval(() => {
-      this.loadComponent();
-    }, 3000);
-  } */
 }
