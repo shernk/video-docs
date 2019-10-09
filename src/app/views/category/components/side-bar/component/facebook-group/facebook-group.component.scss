@@ -1,0 +1,17 @@
+#facebook-group {
+  display: grid;
+  border: 1px solid #40c980;
+  grid-template-columns: auto auto 1fr;
+  grid-gap: 10px;
+  align-items: center;
+  padding: 5px 10px;
+
+  i {
+    font-size: 40px;
+    color: white;
+  }
+  #bar {
+    border-right: 2px solid #40c980;
+    height: 70%;
+  }
+}

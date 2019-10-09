@@ -1,12 +1,15 @@
-@import "src/styles/variables";
-
 article {
   display: grid;
   min-width: 100px;
-  width: 300px; /* max-width: 250px; */
+  max-width: 250px;
+  background-color: #2b2b2b;
   padding: 10px;
-  margin-bottom: 10px;
-  background-color: $background-color;
-  grid-row-gap: 10px; /* grid-gap: 45px; */
-  // padding-bottom: 50px;
+  grid-gap: 45px;
+  padding-bottom: 50px;
+}
+
+@media screen and (max-width: 768px) {
+  article {
+    max-width: 100%;
+  }
 }

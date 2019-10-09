@@ -1,36 +1,29 @@
-@import "src/styles/variables";
-
 section {
   display: grid;
-  grid-row-gap: 10px;
 
   img {
     width: 100%;
   }
 
   #content {
-    background-color: $quaternary-background;
-    padding: 10px;
+    background-color: #232323;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 15px;
 
     h4 {
-      color: $orange;
+      color: #c97e5a;
       font-weight: bold;
-      text-align: center;
     }
 
-    button {
+    #buy-now {
       width: 100%;
-      background-color: $green;
+      text-align: center;
+      background-color: #40c980;
       border: none;
       color: white;
       padding: 10px;
+      display: block;
     }
-  }
-}
-
-@media screen and (max-width: $tablet){
-  section{
-    grid-template-columns: 1fr;
-    grid-gap: 10px;
   }
 }

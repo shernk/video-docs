@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-linkedin-post',
@@ -8,7 +7,7 @@ import { Title } from '@angular/platform-browser';
   styleUrls: ['./linkedin-post.component.scss']
 })
 export class LinkedinPostComponent {
-  constructor(/* public titleService: Title,  */public router: Router) { }
+  constructor(public router: Router) { }
 
   public get linkedinMessage(): string {
     const base = 'https://www.linkedin.com/shareArticle?mini=true';

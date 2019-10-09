@@ -1,8 +1,6 @@
-@import "src/styles/variables";
-
-
 #share-container {
   display: grid;
+  grid-gap: 20px;
 
   #share-action {
     display: grid;
@@ -12,7 +10,7 @@
 
     i,
     h4 {
-      color: $green;
+      color: #40c980;
       font-weight: bold;
     }
 
@@ -28,8 +26,8 @@
 
   #social-media {
     display: grid;
-    grid-gap: 20px;
     grid-template-columns: auto auto;
-    justify-items: center;
+    grid-gap: 20px;
+    justify-content: center;
   }
 }

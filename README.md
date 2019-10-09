@@ -8,6 +8,7 @@
 #5 base, URI
 #6. check again breadCrumbs to actually understand the code how its works
 #7. What the heck dynamic content
+#8. Set twitter post
 ---
 # Have to do with high priority
 >>> Backend
