@@ -93,6 +93,10 @@ nav {
           &.active-route {
             color: white;
           }
+
+          &:hover {
+            color: $green;
+          }
         }
 
         &.fa-chevron-left {

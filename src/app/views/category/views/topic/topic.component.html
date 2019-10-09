@@ -1,5 +1,9 @@
 <div id="topic-container">
-  <app-video-playlist id="playlist" [playlist]="detailPlaylist" [nextRouterPiece]="'detail'" ></app-video-playlist>
+  <app-video-playlist
+    id="playlist"
+    [playlists]="detailPlaylist"
+    [nextRoutePiece]="'detail'"
+  ></app-video-playlist>
 
   <app-video id="video" [videoId]="topic.videoId"></app-video>
 

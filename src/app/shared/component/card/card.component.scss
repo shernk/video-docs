@@ -1,12 +1,21 @@
+@import "src/styles/variables";
+
 div {
   display: block;
-  background-color: #252525;
+  background-color: $background-color-nav;
   padding: 20px;
-}
-div h2 {
-  color: white;
-  margin-top: 0;
-}
-div #card-body {
-  padding: 0;
+
+  h2 {
+    color: white;
+    margin-top: 0;
+
+    i{
+      margin-right: 10px;
+      color: $color;
+    }
+  }
+
+  #card-body {
+    padding: 0;
+  }
 }

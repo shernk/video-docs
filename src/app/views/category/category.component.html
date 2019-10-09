@@ -1,15 +1,15 @@
 <div id="category-container">
   <app-bread-crumbs></app-bread-crumbs>
-
+  
+  <app-header></app-header>
+  
   <app-side-bar> </app-side-bar>
 
-  <app-header></app-header>
+  <app-books id="books" [books]="resources.books"></app-books>
 
-  <app-book id="books" *ngFor="let book of category.books" [books]="book"></app-book>
+  <app-courses id="courses" [courses]="resources.courses"></app-courses>
 
-  <app-courses id="courses" [courses]="category.courses"></app-courses>
-
-  <div id="category-home-content">
+  <div id="category-content">
     <router-outlet></router-outlet>
   </div>
 </div>

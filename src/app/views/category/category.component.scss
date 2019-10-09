@@ -1,81 +1,39 @@
 @import "src/styles/variables";
 
-#category-container,
-#topic-container {
+#category-container {
   display: grid;
   grid-gap: 10px;
   grid-template-columns: 1fr 300px;
   margin-left: 50px;
-  // 1.change UI at Ep37-1:50
-  // 2.change UI at Ep39-1:15:11
-  // 3.UI at Ep45-5:13
   grid-template-areas:
     "breadCrumbs breadCrumbs"
-    "header header"
-    "topics topics"
-    "topicsl side-bar"
-    "video side-bar"
-    "app-card side-bar";
-}
+    "header ."
+    "document side-bar"
+    "courses side-bar"
+    "books side-bar";
 
-app-bread-crumbs {
-  grid-area: breadCrumbs;
-}
-
-app-header {
-  grid-area: header;
-}
-
-app-side-bar {
-  grid-area: side-bar;
-}
-
-app-topic-list {
-  grid-area: topicsl;
-}
-
-#video {
-  grid-area: video;
-
-  #video-container {
-    display: grid;
-    padding-bottom: 20px;
-    grid-gap: 10px;
-    grid-template-columns: 1fr auto;
+  app-bread-crumbs {
+    grid-area: breadCrumbs;
   }
-}
 
-app-vertical-tabs {
-  grid-area: examples;
-}
-
-
-#topics {
-  display: grid;
-  grid-gap: 10px;
-  margin-bottom: 0;
-  grid-area: topics;
-  grid-template-columns: 230px auto 300px;
-  margin-top: 20px;
-
-  #options {
-    display: grid;
-    // justify-items: center;
-    grid-gap: 10px;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+  app-header {
+    grid-area: header;
   }
-}
 
-app-card {
-  #books {
+  app-side-bar {
+    grid-area: side-bar;
+  }
+
+  app-books {
     grid-area: books;
-    display: grid;
-    grid-gap: 10px;
-    grid-template-columns: 1fr 1fr;
   }
 
-  #courses {
+  app-courses {
     grid-area: courses;
+  }
+
+  #category-content {
+    grid-area: document;
   }
 }
 
@@ -87,7 +45,7 @@ app-card {
     // grid-template-areas:
     // 'breadCrumbs'
     // 'header'
-    // 'topicsl'
+    // 'topics'
     // 'playlist'
     // 'app-card';
 
