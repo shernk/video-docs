@@ -1,24 +1,21 @@
-@import '../../../../../../../styles/variables.scss';
+@import "src/styles/variables";
 
 section {
-  padding-bottom: 20px;
-
   h4 {
-    color: white;
+    color: #40c980;
     font-weight: bold;
-    // font-size: 20px;
     text-align: center;
-    background-color: $tertiary-background;
+    margin-top: 0;
   }
 
   #support {
     display: grid;
     grid-gap: 10px;
-    grid-template-columns: 60px auto;
+    grid-template-columns: auto auto;
     justify-content: center;
 
     i {
-      font-size: 45px;
+      font-size: 30px;
 
       &.fa-paypal {
         color: #169bd7;
