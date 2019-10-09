@@ -16,14 +16,7 @@ export class CategoryService extends ACategoryService {
   public async getCategory(categoryId: string): Promise<Category> {
     try {
       const res = await this.http
-        /***
-         ** Eps31
-         ** Time: 50:00
-         * ! Failed to get http://localhost:3000/v1/category, status 404
-         * ? .get(`${this.base}/v1/category`)
-         * TODO: get rid of "/api"
-         */
-        .get(`${this.base}/api/v1/category/${categoryId}`)
+        .get(`${this.base}/v1/category/${categoryId}`)
         .toPromise();
 
       return new Category(res);

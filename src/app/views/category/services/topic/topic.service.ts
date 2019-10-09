@@ -2,16 +2,13 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { TopicFull } from "./../../models/topic/topic-full.model";
 import { ATopicService } from "./atopic.service";
-import { AHttpUtilityService } from 'src/app/shared/services/http-utility/ahttp-utility.service';
+import { AHttpUtilityService } from "src/app/shared/services/http-utility/ahttp-utility.service";
 
 @Injectable()
 export class TopicService extends ATopicService {
   public base: string;
 
-  constructor(
-    public httpUtil: AHttpUtilityService,
-    public http: HttpClient
-  ) {
+  constructor(public httpUtil: AHttpUtilityService, public http: HttpClient) {
     super();
     this.base = this.httpUtil.base;
   }
@@ -22,14 +19,7 @@ export class TopicService extends ATopicService {
   ): Promise<TopicFull> {
     try {
       const res = await this.http
-      /**
-       * TODO: change route
-       * ? `${this.base}/v1/topics/${topicId}/category/${categoryId}`
-       * TODO: change route at server
-       * ? '/:topicId/category/:categoryId'
-       * TODO: watch again Ep37 at 1:54:10
-       */
-        .get(`${this.base}/v1/category/${categoryId}/topics/${topicId}`)
+        .get(`${this.base}/v1/topics/${topicId}/category/${categoryId}`)
         .toPromise();
 
       return new TopicFull(res);
