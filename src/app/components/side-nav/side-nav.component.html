@@ -23,54 +23,9 @@
     </li>
     <hr />
 
-    <!-- (click)="openMenu()" -->
-    <!-- [routerLinkActive]="'active-route'" -->
-    <li
-      [routerLink]="['category/javascript']"
-    >
+    <li [routerLink]="['category/javascript']">
       <i class="fab fa-js" [routerLinkActive]="'active-route'"></i>
     </li>
   </ul>
 </nav>
-
-<!-- <nav [class.is-closed]="isClosed" [class.is-open]="!isClosed">
-  <ul>
-    <li id="logo">
-      <i
-        class="fas fa-bars"
-        [class.is-open]="!isClosed"
-        (click)="openMenu()"
-      ></i>
-      <img
-        id="logo-img"
-        src="assets/icons/icon-72x72.png"
-        alt="logo"
-        [routerLink]="['']"
-        (click)="closeMenu()"
-      />
-      <div
-        [class.is-closed]="isClosed"
-        [routerLink]="['']"
-        (click)="closeMenu()"
-      >
-        Video Dev Docs
-      </div>
-      <i
-        *ngIf="!isClosed"
-        class="fas fa-chevron-left"
-        (click)="closeMenu()"
-      ></i>
-    </li>
-    <hr />
-
-    <li
-      [routerLink]="['category/javascript']"
-      [routerLinkActive]="'active-route'"
-      (click)="closeMenu()"
-    >
-      <i class="fab fa-js" [routerLinkActive]="'active-route'"></i>
-      <span [class.is-closed]="isClosed">JavaScript</span>
-    </li>
-  </ul>
-</nav> -->
 "

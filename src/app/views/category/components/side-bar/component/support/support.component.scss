@@ -2,7 +2,7 @@
 
 section {
   h4 {
-    color: #40c980;
+    color: $green;
     font-weight: bold;
     text-align: center;
     margin-top: 0;
@@ -18,11 +18,11 @@ section {
       font-size: 30px;
 
       &.fa-paypal {
-        color: #169bd7;
+        color: $blue;
       }
 
       &.fa-patreon {
-        color: #e64413;
+        color: $red;
       }
     }
   }
