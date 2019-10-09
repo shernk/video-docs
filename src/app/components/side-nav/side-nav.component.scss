@@ -6,7 +6,7 @@ nav {
   width: 300px;
   align-content: baseline;
   transition: all 0.3s;
-  background-color: $secondary-background;
+  background-color: $background-color;
   position: fixed;
   z-index: 2;
 
@@ -126,7 +126,7 @@ nav {
     }
 
     &.is-open {
-      background-color: $secondary-background;
+      background-color: $background-color;
       height: -webkit-fill-available;
     }
   }

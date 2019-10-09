@@ -1,26 +1,30 @@
-<article>
-  <div id="book-content">
-    <img [src]="book.imageUrl" [alt]="book.title" />
-
-    <div id="information">
-      <h3>{{ book.title }}</h3>
-
-      <p>{{ book.description }}</p>
+<app-card
+  id="books"
+  [iconClasses]="'fas fa-book'"
+  [title]="'Recommended Books'"
+>
+  <div id="books-container">
+    <div id="book" *ngFor="let book of books">
+      <div id="book-content">
+        <a [href]="book.href" target="blank">
+          <img [src]="book.imageUrl" [alt]="book.title" />
+        </a>
+        <div id="information">
+          <h3>{{ book.title }}</h3>
+          <p>{{ book.description | slice: 0:175 }}...</p>
+        </div>
+      </div>
+      <div id="book-details">
+        <hr />
+        <div id="rating">
+          <a [href]="book.href" target="blank" id="buy">
+            <i class="fas fa-info-circle"></i> Details
+          </a>
+          <a [href]="book.href" target="blank" id="stars">
+            <app-star-list [rating]="this.book.rating"></app-star-list>
+          </a>
+        </div>
+      </div>
     </div>
   </div>
-
-  <div id="book-details">
-    <hr />
-
-    <div id="rating">
-      <div id="buy">
-        <i class="fas fa-info-circle"></i>
-        Details
-      </div>
-      <div id="stars">
-        <app-star-list [rating]=
-        "this.book.rating"></app-star-list>
-      </div>
-    </div>
-  </div>
-</article>
+</app-card>

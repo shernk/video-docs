@@ -8,5 +8,5 @@ import { Book } from "../../models/book.model";
   styleUrls: ["./book.component.scss"]
 })
 export class BookComponent {
-  @Input() public book: Book = new Book();
+  @Input() public books: Book[] = [];
 }

@@ -1,66 +1,81 @@
 @import "../../../../../styles/variables.scss";
 
-article {
-  #book-content {
+app-card {
+  #books-container {
     display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+
+    #book {
+      display: grid;
+      height: 100%;
+      grid-template-rows: 1fr;
+
+      #book-content {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        background-color: $tertiary-background;
+        padding: 15px;
+        grid-column-gap: 20px;
+
+        img {
+          background-color: $black;
+          padding: 15px 30px;
+          display: block;
+          max-width: 160px;
+        }
+
+        #information {
+          display: grid;
+
+          h3 {
+            color: $orange;
+            margin-top: 0;
+            margin-bottom: 0;
+          }
+          p {
+            color: white;
+            margin-bottom: 0;
+          }
+        }
+      }
+
+      #book-details {
+        display: grid;
+        background-color: $tertiary-background;
+
+        hr {
+          margin: 0;
+        }
+
+        #rating {
+          display: grid;
+          font-size: 25px;
+          grid-template-columns: auto auto;
+          padding: 15px;
+
+          #buy,
+          i {
+            color: $orange;
+          }
+
+          #stars {
+            justify-self: end;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #books-container {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr;
+  }
+
+  #book-content {
     grid-template-columns: auto 1fr;
-    background-color: $tertiary-background;
-    grid-gap: 20px;
-    padding: 15px;
-
-    img {
-      background-color: $black;
-      padding: 15px 20px;
-      display: block;
-    }
-
-    #information {
-      display: grid;
-
-      h3 {
-        color: $orange;
-        margin-top: 0;
-        margin-bottom: 0;
-      }
-
-      p {
-        color: white;
-        margin-bottom: 0;
-        align-self: center;
-      }
-    }
-  }
-
-  #book-details {
-    background-color: $tertiary-background;
-    margin-bottom: 15px;
-
-
-    hr {
-      margin: 0;
-    }
-
-    #rating {
-      display: grid;
-      font-size: 25px;
-      padding: 15px;
-      grid-template-columns: auto auto;
-
-      #buy
-      {
-        color: $orange;
-      }
-
-      #stars {
-        justify-self: end;
-      }
-    }
   }
 }
-
-@media screen and (max-width: 1024px) {
-  article {
-      grid-template-columns: 1fr;
-  }
-}
-

@@ -3,15 +3,15 @@ export class Book {
   public title: string;
   public description: string;
   public href: string;
-  public rating: any;
+  public rating: number;
 
   constructor(data?: any) {
     const defaults = {
-      imageUrl: '',
+      imageUrl: 'https://via.placeholder.com/75x100',
       title: '',
       description: '',
       href: '',
-      rating: '',
+      rating: 5,
       ...data
     };
 
