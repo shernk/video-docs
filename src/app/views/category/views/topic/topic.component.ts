@@ -7,8 +7,8 @@ import { Detail } from 'src/app/shared/models/detail.model';
 import { ASeoService } from 'src/app/shared/seo/aseo.service';
 import { AHeaderService } from '../../components/header/service/aheader.service';
 import { Topic } from '../../models/topic/topic.model';
-import { Header } from '../../models/header/header.model';
 import { MetaTag } from 'src/app/shared/models/enums/meta-tag.enum';
+import { Header } from '../../components/header/model/header.model';
 
 @Component({
   selector: "app-topic",

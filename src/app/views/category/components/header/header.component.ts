@@ -1,7 +1,7 @@
 import { Component, Injectable } from "@angular/core";
-import { Header } from "../../models/header/header.model";
 import { AIconService } from "src/app/shared/services/icon/aicon.service";
 import { AHeaderService } from "./service/aheader.service";
+import { Header } from './model/header.model';
 
 Injectable();
 @Component({

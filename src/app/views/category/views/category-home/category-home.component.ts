@@ -6,7 +6,7 @@ import { ActivatedRoute } from "@angular/router";
 import { ACategoryService } from "../../services/category/acategory.service";
 import { AHeaderService } from "../../components/header/service/aheader.service";
 import { ASeoService } from "src/app/shared/seo/aseo.service";
-import { Header } from '../../models/header/header.model';
+import { Header } from '../../components/header/model/header.model';
 
 @Component({
   selector: "app-category-home",

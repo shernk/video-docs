@@ -5,7 +5,7 @@ import { ASeoService } from "src/app/shared/seo/aseo.service";
 import { Detail } from "src/app/shared/models/detail.model";
 import { AHeaderService } from "../../components/header/service/aheader.service";
 import { MetaTag } from "src/app/shared/models/enums/meta-tag.enum";
-import { Header } from "../../models/header/header.model";
+import { Header } from '../../components/header/model/header.model';
 
 @Component({
   selector: "app-detail",

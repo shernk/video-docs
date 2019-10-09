@@ -1,6 +1,6 @@
 import { Subject } from 'rxjs';
 import { AHeaderService } from './aheader.service';
-import { Header } from '../../../models/header/header.model';
+import { Header } from '../model/header.model';
 
 export class HeaderService implements AHeaderService {
   public headerSubject = new Subject();
