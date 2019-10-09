@@ -1,6 +1,6 @@
 import { AlertComponent } from "./alert.component";
 import { AlertService } from "./services/alert/alert.service";
-import { LocalStorageKey } from "./../shared/models/enums/local-storage-key.enum";
+import { LocalStorageKey } from "./models/enums/local-storage-key.enum";
 import { MockCategoryService } from "./services/local-storage/mock-local-storage.model";
 
 describe("Alert Component", () => {

@@ -1,5 +1,4 @@
 import { Topic } from "./topic.model";
-import { Detail } from 'src/app/shared/models/detail.model';
 
 export class TopicFull implements Topic {
   public categorySimpleId: string;
@@ -7,7 +6,6 @@ export class TopicFull implements Topic {
   public label: string;
   public simpleId: string;
   public playlistId: string;
-  public playlist: Detail;
   public videoId: string;
 
   constructor(data?: any) {
@@ -17,7 +15,6 @@ export class TopicFull implements Topic {
       label: "",
       simpleId: "",
       playlistId: "",
-      playlist: [],
       videoId: "",
       ...data
     };
@@ -27,7 +24,6 @@ export class TopicFull implements Topic {
     this.label = defaults.label;
     this.simpleId = defaults.simpleId;
     this.playlistId = defaults.playlistId;
-    this.playlist = new Detail(defaults.playlist);
     this.videoId = defaults.videoId;
   }
 }

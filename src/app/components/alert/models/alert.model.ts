@@ -1,5 +1,5 @@
 import { AlertTypes } from './enums/alert-types.enum';
-import { LocalStorageKey } from '../../shared/models/enums/local-storage-key.enum';
+import { LocalStorageKey } from './enums/local-storage-key.enum';
 
 
 export class Alert {
