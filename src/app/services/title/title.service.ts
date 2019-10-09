@@ -26,7 +26,7 @@ export class TitleService {
 
     switch (urlPieces.length) {
       case 1:
-        this.setRootPage(urlPieces);
+        this.setTitlePage(urlPieces);
         break;
       case 2:
         this.setSubCategoryTitle(urlPieces);
@@ -36,20 +36,29 @@ export class TitleService {
     }
   }
 
-  private setRootPage(urlPiece: string[]): void {
-    const capitalizeRootPage = `${urlPiece[0][0].toUpperCase()}${urlPiece[0].slice(
+  /**
+   * slice the first character of the title to uppercase
+   */
+  private setTitlePage(urlPiece: string[]): void {
+    const capitalizeTitlePage = `${urlPiece[0][0].toUpperCase()}${urlPiece[0].slice(
       1
     )} - Video Dev Docs | VDD`;
 
-    this.titleService.setTitle(capitalizeRootPage);
+    this.titleService.setTitle(capitalizeTitlePage);
   }
 
+ /** 
+  * set title for only category page
+  * the current scrumb or topic has choosen to representation
+  */
   private setSubCategoryTitle(urlPieces: string[]): void {
-    const actualCategory = urlPieces[1];
-    const title = `${actualCategory.toUpperCase()} | VDD`;
+    const crrSubCategory = urlPieces[1];
 
-    if (actualCategory === "javascript") {
-      this.titleService.setTitle(`${DISPLAY_META_DATA[actualCategory]} |  VDD`);
+    const title = `${crrSubCategory.toUpperCase()} | VDD`;
+
+    // ! fixed crrSubCategory to be dynamic with route URL or scrumb ro topic
+    if (crrSubCategory === "javascript") {
+      this.titleService.setTitle(`${DISPLAY_META_DATA[crrSubCategory]} |  VDD`);
     }
 
     this.titleService.setTitle(title);

@@ -36,4 +36,6 @@
 3. set footer for home page
 4. re-construction folder
 5. fixed footer go to bottom of the home page
+6. modified route(app.route.ts)
+7. fixed crrSubCategory(title.service.ts) to be dynamic with route URL or scrumb ro topic
 

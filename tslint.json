@@ -40,6 +40,7 @@
     "object-literal-sort-keys": false,
     "ordered-imports": false,
     "quotemark": [false, "double"],
+    "jsdoc-format": false,
     "no-trailing-whitespace": [false, "ignore-comments"],
     "disable-next-line": "space-before-function-paren",
     "whitespace": [
