@@ -107,9 +107,16 @@ footer {
 @media screen and (max-width: 768px) {
   footer {
     padding: 10px 15px;
+
+    #top-of-page {
+      left: 44.5%;
+      right: 44.5%;
+    }
   }
-  footer #top-of-page {
-    left: 44.5%;
-    right: 44.5%;
+}
+
+@media screen and (max-width: 1017px) {
+  footer {
+    padding: 20px 20px ;
   }
 }

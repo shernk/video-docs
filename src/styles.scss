@@ -75,8 +75,14 @@ textarea {
   min-height: 200px;
 }
 
-@media screen and (max-width: 1024px){
-  hr{
+@media screen and (max-width: 1024px) {
+  hr {
     display: none;
+  }
+}
+
+@media screen and (max-width: 769px) {
+  * {
+    margin: 0px 0px;
   }
 }
