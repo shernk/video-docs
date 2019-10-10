@@ -37,21 +37,23 @@
   }
 }
 
-@media screen and (max-width: $tablet) {
-  #category-container,
-  #topic-container {
-    // margin-left: 0;
-    // grid-template-columns: 1fr;
-    // grid-template-areas:
-    // 'breadCrumbs'
-    // 'header'
-    // 'topics'
-    // 'playlist'
-    // 'app-card';
+@media screen and (max-width: 768px) {
+  #category-container {
+    margin-left: 0;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "breadCrumbs"
+      "header"
+      "document"
+      "courses"
+      "books"
+      "side-bar";
 
-    #video {
-      #video-container {
-        grid-template-columns: 1fr;
+    #category-content {
+      #video {
+        #video-container {
+          grid-template-columns: 1fr;
+        }
       }
     }
   }
