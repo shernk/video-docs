@@ -9,11 +9,11 @@ import { DomSanitizer, SafeResourceUrl } from "@angular/platform-browser";
 export class VideoComponent {
   private embedUrl = "";
   public thumbnailUrl = '';
-  @Input() public set videoId(value: string) {
-    if (value) {
+  @Input() public set videoId(videoId: string) {
+    if (videoId) {
       this.videoUrl = '';
-      this.embedUrl = `https://www.youtube.com/embed/${value}?autoplay=1`;
-      this.thumbnailUrl = `https://i.ytimg.com/vi/${value}/hqdefault.jpg`;
+      this.embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+      this.thumbnailUrl = `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`;
     }
   }
   public videoUrl: SafeResourceUrl = "";

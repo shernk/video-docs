@@ -25,6 +25,6 @@ export class Detail {
     this.topicSimpleId = defaults.topicSimpleId;
     this.label = defaults.label;
     this.description = defaults.description;
-    this.thumbnailUrl = `https://i.ytimg.com/vi/${this.videoId}/mqdefault.jpg`;
+    this.thumbnailUrl = `https://i.ytimg.com/vi/${this.videoId}/default.jpg`;
   }
 }

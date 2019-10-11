@@ -10,9 +10,9 @@
 ---
 # Have to do with high priority
 >>> Backend
-1. set API_KEY
-2. get API_GET
-3. check base
+<!-- 1. set API_KEY -->
+<!-- 2. get API_GET -->
+<!-- 3. check base -->
 4. route
 5. modified controller
 6. check PORT again
@@ -20,7 +20,7 @@
 8. get URI
 9. HTTP Utility
 10. HTTP & Client-Server
-11. fixed /api/api route
+<!-- 11. fixed /api/api route -->
 12. Create own database API for team members.
 >>> Frontend
 <!-- 1. set min screen css(625px, 625px) -->
