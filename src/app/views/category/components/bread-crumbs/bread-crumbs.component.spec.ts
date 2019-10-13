@@ -1,11 +1,15 @@
+import { Subject } from "rxjs";
+import { BreadCrumbsService } from "./service/bread-crumbs/bread-crumbs.service";
+import { Router } from "@angular/router";
 import { BreadCrumb } from "src/app/views/category/models/bread-crumbs.model";
 import { BreadCrumbsComponent } from "./bread-crumbs.component";
 import { MockBreadCrumbsService } from "./service/bread-crumbs/mock-bread-crumbs.service";
+import { AsyncResource } from "async_hooks";
 
 describe("Bread Crumbs Component", () => {
   it("Can be Built", () => {
-    // act
-    const component = new BreadCrumbsComponent(null);
+    const sub: any = new Subject();
+    const component = new BreadCrumbsComponent(sub);
 
     // assert
     expect(component instanceof BreadCrumbsComponent).toBeDefined();
@@ -28,9 +32,6 @@ describe("Bread Crumbs Component", () => {
           new BreadCrumb({ urlPiece: "javascript" }),
           new BreadCrumb({ urlPiece: "arrays" })
         ];
-
-        // act
-        component.ngOnInit();
 
         // assert
         expect(component.breadCrumbs[0].urlPiece).toEqual("javascript");
@@ -81,3 +82,4 @@ describe("Bread Crumbs Component", () => {
     });
   });
 });
+

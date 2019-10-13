@@ -1,7 +1,7 @@
 import { NavigationEnd } from "@angular/router";
-import { MockAngularTitleService } from "../../components/shared/mocks/mock-angular-title.service";
-import { MockRouter } from "./../../components/shared/mocks/mock-router";
 import { TitleService } from "./title.service";
+import { MockAngularTitleService } from 'src/app/shared/mocks/mock-angular-title.service';
+import { MockRouter } from 'src/app/shared/mocks/mock-router';
 
 describe("Title Service", () => {
   it("Can be built", () => {

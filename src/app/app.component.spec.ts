@@ -1,6 +1,6 @@
-import { MockRouter } from "./components/shared/mocks/mock-router";
 import { AppComponent } from "./app.component";
 import { MockTitleService } from "./services/title/mock-title.service";
+import { MockRouter } from './shared/mocks/mock-router';
 
 describe("App Component", () => {
   it("Exists", () => {
