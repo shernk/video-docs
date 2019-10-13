@@ -2,9 +2,9 @@
 1. URL from frontend
 <!-- 2. PORT -->
 <!-- 3. Connect mongoDB -->
-4. create own API data
+<!-- 4. create own API data -->
 <!-- 5. base, URI -->
-6. check again breadCrumbs to actually understand the code how its works
+<!-- 6. check again breadCrumbs to actually understand the code how its works -->
 7. What the heck dynamic content
 8. Set twitter post
 ---
@@ -14,11 +14,11 @@
 <!-- 2. get API_GET -->
 <!-- 3. check base -->
 <!-- 4. route -->
-5. modified controller(req.params.id)?
+<!-- 5. modified controller(req.params.id)? -->
 <!-- 6. check PORT again -->
 6. modified route(app.route.ts)
-7. get database (have to watch again video)
-8. get URI
+<!-- 7. get database (have to watch again video) -->
+<!-- 8. get URI -->
 9. HTTP Utility
 10. HTTP & Client-Server
 <!-- 11. fixed /api/api route -->
